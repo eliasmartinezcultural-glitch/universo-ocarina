@@ -1,7 +1,10 @@
 /* =========================================================
-   OCARINA PRODUCCIONES
-   V15 · STYLE.CSS
+   OCARINA UNIVERSO
+   STYLE.CSS · V16
    CULTURA · HISTORIA · TERRITORIO · TURISMO
+
+   Adaptado al INDEX.HTML V15
+   Responsive · PC · TABLET · MOBILE
    ========================================================= */
 
 
@@ -31,7 +34,7 @@
 
     --max-width: 1200px;
 
-    --radius: 2px;
+    --header-height: 76px;
 
     --transition:
         .35s cubic-bezier(.22,1,.36,1);
@@ -52,6 +55,7 @@
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
 
@@ -92,7 +96,11 @@ img {
 
 
 iframe {
+
+    display: block;
+
     max-width: 100%;
+
 }
 
 
@@ -162,23 +170,7 @@ button {
 }
 
 
-.eyebrow {
-
-    margin: 0 0 18px;
-
-    font-size: .66rem;
-
-    font-weight: 700;
-
-    letter-spacing: .18em;
-
-    text-transform: uppercase;
-
-    color: var(--gray);
-
-}
-
-
+.eyebrow,
 .eyebrow-light {
 
     margin: 0 0 18px;
@@ -189,10 +181,20 @@ button {
 
     letter-spacing: .18em;
 
+    line-height: 1.4;
+
     text-transform: uppercase;
 
-    color: rgba(255,255,255,.58);
+}
 
+
+.eyebrow {
+    color: var(--gray);
+}
+
+
+.eyebrow-light {
+    color: rgba(255,255,255,.58);
 }
 
 
@@ -212,7 +214,7 @@ button {
 }
 
 
-.section-heading p:last-child {
+.section-heading > p:last-child {
 
     max-width: 650px;
 
@@ -240,6 +242,9 @@ button {
 
     color: white;
 
+    border-bottom:
+        1px solid transparent;
+
     transition:
         background var(--transition),
         backdrop-filter var(--transition),
@@ -251,7 +256,7 @@ button {
 .site-header.scrolled {
 
     background:
-        rgba(17,17,15,.92);
+        rgba(17,17,15,.93);
 
     border-bottom:
         1px solid rgba(255,255,255,.08);
@@ -259,12 +264,15 @@ button {
     backdrop-filter:
         blur(16px);
 
+    -webkit-backdrop-filter:
+        blur(16px);
+
 }
 
 
 .nav {
 
-    min-height: 76px;
+    min-height: var(--header-height);
 
     display: flex;
 
@@ -276,6 +284,8 @@ button {
 
 
 .brand {
+
+    display: inline-block;
 
     font-size: .95rem;
 
@@ -292,7 +302,7 @@ button {
 
     align-items: center;
 
-    gap: 24px;
+    gap: 22px;
 
 }
 
@@ -303,7 +313,9 @@ button {
 
     padding: 5px 0;
 
-    font-size: .64rem;
+    font-size: .62rem;
+
+    line-height: 1.4;
 
     letter-spacing: .13em;
 
@@ -338,32 +350,33 @@ button {
 
 
 .nav-links a:hover {
-
     opacity: 1;
-
 }
 
 
 .nav-links a:hover::after {
-
     width: 100%;
-
 }
 
+
+/* =========================================================
+   05 · MENÚ MOBILE
+   ========================================================= */
 
 .menu-toggle {
 
     display: none;
 
-    width: 42px;
+    width: 44px;
+    height: 44px;
 
-    height: 42px;
-
-    padding: 7px;
+    padding: 6px;
 
     border: 0;
 
     background: transparent;
+
+    color: white;
 
 }
 
@@ -373,7 +386,6 @@ button {
     display: block;
 
     width: 25px;
-
     height: 1px;
 
     margin: 6px auto;
@@ -381,7 +393,8 @@ button {
     background: white;
 
     transition:
-        transform var(--transition);
+        transform var(--transition),
+        opacity var(--transition);
 
 }
 
@@ -389,8 +402,15 @@ button {
 .menu-toggle.active span:first-child {
 
     transform:
-        translateY(3.5px)
+        translateY(7px)
         rotate(45deg);
+
+}
+
+
+.menu-toggle.active span:nth-child(2) {
+
+    opacity: 0;
 
 }
 
@@ -398,14 +418,14 @@ button {
 .menu-toggle.active span:last-child {
 
     transform:
-        translateY(-3.5px)
+        translateY(-7px)
         rotate(-45deg);
 
 }
 
 
 /* =========================================================
-   05 · HERO
+   06 · HERO
    ========================================================= */
 
 .hero {
@@ -413,7 +433,6 @@ button {
     position: relative;
 
     min-height: 100vh;
-
     min-height: 100svh;
 
     display: flex;
@@ -441,13 +460,29 @@ button {
 .hero-background img {
 
     width: 100%;
-
     height: 100%;
 
     object-fit: cover;
 
     animation:
         heroZoom 18s ease-out forwards;
+
+}
+
+
+.hero-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            rgba(0,0,0,.48),
+            rgba(0,0,0,.20) 40%,
+            rgba(0,0,0,.84)
+        );
 
 }
 
@@ -465,23 +500,6 @@ button {
 }
 
 
-.hero-overlay {
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            180deg,
-            rgba(0,0,0,.42),
-            rgba(0,0,0,.18) 40%,
-            rgba(0,0,0,.82)
-        );
-
-}
-
-
 .hero-content {
 
     position: relative;
@@ -491,7 +509,6 @@ button {
     width: 100%;
 
     min-height: 100vh;
-
     min-height: 100svh;
 
     display: flex;
@@ -522,9 +539,11 @@ button {
 
 
 .hero-top span,
-.hero-bottom > span {
+.hero-bottom span {
 
     font-size: .62rem;
+
+    line-height: 1.4;
 
     letter-spacing: .17em;
 
@@ -543,11 +562,13 @@ button {
 }
 
 
-.hero-kicker {
+.hero-label {
 
-    margin-bottom: 20px;
+    margin: 0 0 20px;
 
     font-size: .68rem;
+
+    font-weight: 700;
 
     letter-spacing: .2em;
 
@@ -559,12 +580,12 @@ button {
 }
 
 
-.hero-title {
+.hero-center h1 {
 
     margin: 0;
 
     font-size:
-        clamp(4rem, 12vw, 10rem);
+        clamp(5rem, 14vw, 11rem);
 
     line-height: .78;
 
@@ -575,146 +596,195 @@ button {
 }
 
 
-.hero-title span {
-
-    display: block;
-
-    font-weight: 400;
-
-    font-style: italic;
-
-    color: var(--cream-3);
-
-}
-
-
-.hero-subtitle {
-
-    max-width: 600px;
+.hero-center h2 {
 
     margin: 30px 0 0;
 
     font-size:
-        clamp(1rem, 2vw, 1.25rem);
+        clamp(1rem, 2vw, 1.35rem);
+
+    line-height: 1.25;
+
+    font-weight: 400;
+
+    letter-spacing: -.015em;
 
     color:
-        rgba(255,255,255,.72);
+        rgba(255,255,255,.82);
 
 }
 
 
-.hero-scroll {
+.hero-description {
 
-    display: inline-flex;
+    max-width: 590px;
 
-    align-items: center;
-
-    gap: 14px;
-
-    font-size: .62rem;
-
-    letter-spacing: .15em;
-
-    text-transform: uppercase;
-
-}
-
-
-.hero-scroll-arrow {
+    margin: 22px 0 30px;
 
     font-size: 1rem;
+
+    color:
+        rgba(255,255,255,.68);
 
 }
 
 
 /* =========================================================
-   06 · MANIFIESTO / TERRITORIO
+   07 · BOTONES
    ========================================================= */
 
-.territory {
+.button {
 
-    position: relative;
+    min-height: 48px;
 
-    min-height: 85vh;
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 0 22px;
+
+    border:
+        1px solid transparent;
+
+    font-size: .62rem;
+
+    font-weight: 700;
+
+    line-height: 1.2;
+
+    letter-spacing: .13em;
+
+    text-transform: uppercase;
+
+    transition:
+        background var(--transition),
+        color var(--transition),
+        border-color var(--transition),
+        transform var(--transition);
+
+}
+
+
+.button:hover {
+
+    transform:
+        translateY(-2px);
+
+}
+
+
+.button-light {
+
+    border-color:
+        rgba(255,255,255,.42);
+
+    color: white;
+
+    background: transparent;
+
+}
+
+
+.button-light:hover {
+
+    background: white;
+
+    color: var(--black);
+
+}
+
+
+.button-primary {
 
     background: var(--black);
 
     color: white;
 
-    overflow: hidden;
+}
+
+
+.button-primary:hover {
+
+    background: #302f2a;
 
 }
 
 
-.territory-image {
+.button-outline-dark {
 
-    position: absolute;
+    border-color:
+        rgba(17,17,15,.30);
 
-    inset: 0;
+    color: var(--black);
 
-}
-
-
-.territory-image img {
-
-    height: 100%;
-
-    object-fit: cover;
+    background: transparent;
 
 }
 
 
-.territory-overlay {
+.button-outline-dark:hover {
 
-    position: absolute;
+    background: var(--black);
 
-    inset: 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,.88),
-            rgba(0,0,0,.35),
-            rgba(0,0,0,.72)
-        );
+    color: white;
 
 }
 
 
-.territory-content {
+.button-dark {
 
-    position: relative;
+    background: var(--black);
 
-    z-index: 2;
-
-    min-height: 85vh;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
+    color: white;
 
 }
 
 
-.territory-text {
+.button-outline {
 
-    max-width: 760px;
-
-    margin-top: 35px;
+    border-color:
+        rgba(0,0,0,.30);
 
 }
 
 
-.territory-text h2 {
+/* =========================================================
+   08 · INTRODUCCIÓN
+   ========================================================= */
+
+.intro-section {
+
+    background: var(--cream);
+
+}
+
+
+.intro-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 100px;
+
+    align-items: start;
+
+}
+
+
+.intro-grid h2 {
+
+    max-width: 620px;
 
     margin: 0;
 
     font-size:
-        clamp(3rem, 7vw, 7rem);
+        clamp(3rem, 6vw, 6rem);
 
-    line-height: .9;
+    line-height: .92;
 
     font-weight: 400;
 
@@ -723,52 +793,36 @@ button {
 }
 
 
-.territory-text h2 em {
-
-    display: block;
-
-    color: var(--cream-3);
-
-}
-
-
-.territory-line {
-
-    width: 90px;
-
-    height: 1px;
-
-    margin: 40px 0;
-
-    background:
-        rgba(255,255,255,.45);
-
-}
-
-
-.territory-text p {
+.intro-copy {
 
     max-width: 580px;
 
-    color:
-        rgba(255,255,255,.72);
+}
+
+
+.intro-copy p {
+
+    margin: 0 0 22px;
+
+    color: var(--gray);
 
 }
 
 
-.territory-final {
+.intro-copy .intro-lead {
 
-    margin-top: 45px;
+    font-size:
+        clamp(1.15rem, 2vw, 1.5rem);
 
-    font-size: 1.2rem;
+    line-height: 1.35;
 
-    font-style: italic;
+    color: var(--black);
 
 }
 
 
 /* =========================================================
-   07 · UNIVERSO OCARINA
+   09 · UNIVERSO
    ========================================================= */
 
 .universe {
@@ -824,14 +878,17 @@ button {
 
     color: white;
 
-    transform: translateY(-4px);
+    transform:
+        translateY(-4px);
 
 }
 
 
-.universe-card-number {
+.card-number {
 
     font-size: .62rem;
+
+    line-height: 1.4;
 
     letter-spacing: .16em;
 
@@ -851,6 +908,8 @@ button {
     line-height: 1;
 
     font-weight: 400;
+
+    letter-spacing: -.035em;
 
 }
 
@@ -874,13 +933,13 @@ button {
 }
 
 
-.universe-card-link {
+.universe-card strong {
 
     margin-top: 25px;
 
     font-size: .61rem;
 
-    font-weight: 700;
+    line-height: 1.4;
 
     letter-spacing: .14em;
 
@@ -899,13 +958,13 @@ button {
 .universe-featured p {
 
     color:
-        rgba(255,255,255,.6);
+        rgba(255,255,255,.60);
 
 }
 
 
 /* =========================================================
-   08 · PRODUCCIONES
+   10 · PRODUCCIONES
    ========================================================= */
 
 .productions {
@@ -934,6 +993,13 @@ button {
 }
 
 
+.production:first-of-type {
+
+    border-top: 0;
+
+}
+
+
 .production-reverse {
 
     grid-template-columns:
@@ -943,22 +1009,20 @@ button {
 
 
 .production-reverse .video-wrapper {
-
     order: 2;
-
 }
 
 
 .production-reverse .production-info {
-
     order: 1;
-
 }
 
 
 .video-wrapper {
 
     position: relative;
+
+    width: 100%;
 
     aspect-ratio: 16 / 9;
 
@@ -976,7 +1040,6 @@ button {
     inset: 0;
 
     width: 100%;
-
     height: 100%;
 
     border: 0;
@@ -987,6 +1050,8 @@ button {
 .production-number {
 
     font-size: .62rem;
+
+    line-height: 1.4;
 
     letter-spacing: .15em;
 
@@ -1042,6 +1107,8 @@ button {
 
     font-size: .59rem;
 
+    line-height: 1.3;
+
     letter-spacing: .08em;
 
     text-transform: uppercase;
@@ -1050,10 +1117,17 @@ button {
 
 
 /* =========================================================
-   09 · RECUERDA
+   11 · RECUERDA
    ========================================================= */
 
-.remember {
+.project-section {
+
+    position: relative;
+
+}
+
+
+.project-dark {
 
     background: var(--black);
 
@@ -1062,7 +1136,7 @@ button {
 }
 
 
-.remember-grid {
+.project-grid {
 
     display: grid;
 
@@ -1076,7 +1150,7 @@ button {
 }
 
 
-.remember-title {
+.project-title h2 {
 
     margin: 0;
 
@@ -1092,7 +1166,7 @@ button {
 }
 
 
-.remember-title em {
+.project-title h2 em {
 
     display: block;
 
@@ -1101,23 +1175,25 @@ button {
 }
 
 
-.remember-copy {
+.project-copy {
 
     max-width: 570px;
 
 }
 
 
-.remember-copy .lead {
+.project-copy .project-lead {
 
     font-size: 1.45rem;
+
+    line-height: 1.35;
 
     color: white;
 
 }
 
 
-.remember-copy p {
+.project-copy p {
 
     color:
         rgba(255,255,255,.66);
@@ -1125,7 +1201,7 @@ button {
 }
 
 
-.remember-actions {
+.project-actions {
 
     display: flex;
 
@@ -1139,7 +1215,382 @@ button {
 
 
 /* =========================================================
-   10 · ARCHIVO
+   12 · CULTURA
+   ========================================================= */
+
+.culture-section {
+
+    background: #ddd5c7;
+
+}
+
+
+.culture-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 100px;
+
+}
+
+
+.culture-grid h2 {
+
+    margin: 0;
+
+    font-size:
+        clamp(2.8rem, 6vw, 5.8rem);
+
+    line-height: .93;
+
+    font-weight: 400;
+
+    letter-spacing: -.05em;
+
+}
+
+
+.culture-copy {
+
+    max-width: 580px;
+
+}
+
+
+.culture-copy p {
+
+    color: var(--gray);
+
+}
+
+
+.culture-copy .culture-lead {
+
+    font-size:
+        clamp(1.15rem, 2vw, 1.45rem);
+
+    line-height: 1.4;
+
+    color: var(--black);
+
+}
+
+
+.culture-categories {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 60px;
+
+}
+
+
+.culture-categories span,
+.discover-categories span {
+
+    padding: 10px 14px;
+
+    border:
+        1px solid rgba(0,0,0,.22);
+
+    font-size: .59rem;
+
+    line-height: 1.3;
+
+    letter-spacing: .12em;
+
+    text-transform: uppercase;
+
+}
+
+
+/* =========================================================
+   13 · DESCUBRE
+   ========================================================= */
+
+.discover-section {
+
+    position: relative;
+
+    min-height: 82vh;
+
+    min-height: 82svh;
+
+    display: flex;
+
+    align-items: center;
+
+    background: var(--black);
+
+    color: white;
+
+    overflow: hidden;
+
+}
+
+
+.discover-background {
+
+    position: absolute;
+
+    inset: 0;
+
+}
+
+
+.discover-background img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+}
+
+
+.discover-overlay {
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.86),
+            rgba(0,0,0,.35),
+            rgba(0,0,0,.78)
+        );
+
+}
+
+
+.discover-content {
+
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+}
+
+
+.discover-content h2 {
+
+    max-width: 900px;
+
+    margin: 15px 0 25px;
+
+    font-size:
+        clamp(3rem, 8vw, 8rem);
+
+    line-height: .84;
+
+    font-weight: 400;
+
+    letter-spacing: -.06em;
+
+}
+
+
+.discover-lead {
+
+    max-width: 620px;
+
+    margin: 0;
+
+    color:
+        rgba(255,255,255,.72);
+
+}
+
+
+.discover-categories {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 35px;
+
+}
+
+
+.discover-categories span {
+
+    border-color:
+        rgba(255,255,255,.25);
+
+    color:
+        rgba(255,255,255,.78);
+
+}
+
+
+.discover-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 35px;
+
+}
+
+
+/* =========================================================
+   14 · MAPA
+   ========================================================= */
+
+.map-section {
+
+    background: #e5ddcf;
+
+}
+
+
+.map-preview {
+
+    position: relative;
+
+    min-height: 430px;
+
+    display: grid;
+
+    place-items: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #d7cfc0,
+            #eee8dc
+        );
+
+    border:
+        1px solid var(--line-dark);
+
+    overflow: hidden;
+
+}
+
+
+.map-preview::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background-image:
+        linear-gradient(
+            rgba(17,17,15,.08) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(17,17,15,.08) 1px,
+            transparent 1px
+        );
+
+    background-size:
+        45px 45px;
+
+    opacity: .65;
+
+}
+
+
+.map-placeholder {
+
+    position: relative;
+
+    z-index: 2;
+
+    max-width: 600px;
+
+    padding: 40px;
+
+    text-align: center;
+
+}
+
+
+.map-icon {
+
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 25px;
+
+    display: grid;
+
+    place-items: center;
+
+    border:
+        1px solid rgba(17,17,15,.25);
+
+    border-radius: 50%;
+
+    font-size: 1.5rem;
+
+}
+
+
+.map-placeholder h3 {
+
+    margin: 0 0 12px;
+
+    font-size:
+        clamp(1.5rem, 3vw, 2.5rem);
+
+    font-weight: 400;
+
+    letter-spacing: -.03em;
+
+}
+
+
+.map-placeholder p {
+
+    margin: 0;
+
+    color: var(--gray);
+
+}
+
+
+.coming-soon {
+
+    display: inline-block;
+
+    margin-top: 20px;
+
+    font-size: .57rem;
+
+    font-weight: 700;
+
+    letter-spacing: .12em;
+
+    color: var(--accent);
+
+}
+
+
+/* =========================================================
+   15 · ARCHIVO
    ========================================================= */
 
 .archive {
@@ -1198,6 +1649,8 @@ button {
 
     font-size: .62rem;
 
+    line-height: 1.4;
+
     letter-spacing: .14em;
 
     opacity: .5;
@@ -1211,6 +1664,8 @@ button {
         auto 0 15px;
 
     font-size: 1.7rem;
+
+    line-height: 1.1;
 
     font-weight: 400;
 
@@ -1244,6 +1699,8 @@ button {
 
     font-weight: 700;
 
+    line-height: 1.3;
+
     letter-spacing: .12em;
 
     color: var(--accent);
@@ -1252,148 +1709,68 @@ button {
 
 
 /* =========================================================
-   11 · CENTRO DE DESCARGAS
+   16 · ARCHIVO DOWNLOAD
    ========================================================= */
 
-.download-center {
+.archive-download {
 
-    background: #e1d9ca;
+    margin-top: 60px;
+
+    padding: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    background: var(--cream-2);
+
+    border:
+        1px solid var(--line-dark);
 
 }
 
 
-.download-intro {
+.archive-download .eyebrow {
 
-    display: grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap: 100px;
-
-    align-items: end;
-
-    margin-bottom: 65px;
+    margin-bottom: 12px;
 
 }
 
 
-.download-intro h2 {
+.archive-download h3 {
 
-    margin: 0;
+    margin: 0 0 10px;
 
     font-size:
-        clamp(2.8rem, 6vw, 5.7rem);
-
-    line-height: .92;
+        clamp(1.6rem, 3vw, 2.5rem);
 
     font-weight: 400;
 
-    letter-spacing: -.05em;
+    letter-spacing: -.035em;
 
 }
 
 
-.download-intro p {
+.archive-download p:not(.eyebrow) {
 
-    max-width: 500px;
+    max-width: 600px;
 
     margin: 0;
 
     color: var(--gray);
-
-}
-
-
-.download-grid {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 15px;
-
-}
-
-
-.download-card {
-
-    padding: 28px;
-
-    background:
-        rgba(255,255,255,.35);
-
-    border:
-        1px solid rgba(0,0,0,.12);
-
-}
-
-
-.download-card h3 {
-
-    margin: 35px 0 10px;
-
-    font-size: 1.35rem;
-
-    font-weight: 400;
-
-}
-
-
-.download-card p {
-
-    min-height: 50px;
-
-    margin: 0;
-
-    color: var(--gray);
-
-    font-size: .9rem;
-
-}
-
-
-.download-button {
-
-    display: inline-flex;
-
-    margin-top: 25px;
-
-    padding: 11px 15px;
-
-    border:
-        1px solid rgba(0,0,0,.25);
-
-    font-size: .59rem;
-
-    font-weight: 700;
-
-    letter-spacing: .12em;
-
-    text-transform: uppercase;
-
-    transition:
-        background var(--transition),
-        color var(--transition);
-
-}
-
-
-.download-button:hover {
-
-    background: var(--black);
-
-    color: white;
 
 }
 
 
 /* =========================================================
-   12 · RADIO
+   17 · RADIO
    ========================================================= */
 
-.radio {
+.radio-section {
 
     background: #171714;
 
@@ -1416,7 +1793,9 @@ button {
 }
 
 
-.radio-title {
+.radio-intro h2 {
+
+    max-width: 650px;
 
     margin: 0 0 25px;
 
@@ -1432,16 +1811,7 @@ button {
 }
 
 
-.radio-title em {
-
-    display: block;
-
-    color: var(--cream-3);
-
-}
-
-
-.radio-description {
+.radio-intro > p:last-child {
 
     max-width: 540px;
 
@@ -1451,7 +1821,9 @@ button {
 }
 
 
-.radio-card {
+/* PLAYER */
+
+.radio-player-card {
 
     padding: 35px;
 
@@ -1460,10 +1832,13 @@ button {
     border:
         1px solid rgba(255,255,255,.1);
 
+    box-shadow:
+        0 25px 70px rgba(0,0,0,.25);
+
 }
 
 
-.radio-status {
+.radio-player-top {
 
     display: flex;
 
@@ -1473,6 +1848,8 @@ button {
 
     font-size: .61rem;
 
+    line-height: 1.4;
+
     letter-spacing: .13em;
 
 }
@@ -1481,8 +1858,9 @@ button {
 .live-dot {
 
     width: 8px;
-
     height: 8px;
+
+    flex: 0 0 auto;
 
     display: inline-block;
 
@@ -1490,13 +1868,15 @@ button {
 
     background: #a34b42;
 
+    box-shadow:
+        0 0 0 5px rgba(163,75,66,.08);
+
 }
 
 
 .radio-disc {
 
     width: 185px;
-
     height: 185px;
 
     margin: 45px auto;
@@ -1539,10 +1919,9 @@ button {
 }
 
 
-.radio-disc-inner {
+.disc-inner {
 
     width: 50px;
-
     height: 50px;
 
     display: grid;
@@ -1575,6 +1954,8 @@ button {
 
     font-size: .95rem;
 
+    line-height: 1.3;
+
     letter-spacing: .08em;
 
 }
@@ -1605,7 +1986,6 @@ button {
 .radio-play {
 
     width: 56px;
-
     height: 56px;
 
     flex: 0 0 auto;
@@ -1669,201 +2049,137 @@ button {
 
 
 /* =========================================================
-   13 · CULTURA
+   18 · RADIO SECONDARY
    ========================================================= */
 
-.culture {
+.radio-secondary {
 
-    background: #ddd5c7;
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px 25px;
+
+    margin-top: 75px;
+
+    padding-top: 25px;
+
+    border-top:
+        1px solid rgba(255,255,255,.12);
 
 }
 
 
-.culture-grid {
+.radio-secondary span {
+
+    font-size: .59rem;
+
+    letter-spacing: .12em;
+
+    color:
+        rgba(255,255,255,.46);
+
+}
+
+
+/* =========================================================
+   19 · AGENDA
+   ========================================================= */
+
+.agenda {
+
+    background: #e5ddcf;
+
+}
+
+
+.agenda-grid {
 
     display: grid;
 
     grid-template-columns:
-        1fr 1fr;
+        repeat(3, 1fr);
 
-    gap: 100px;
+    gap: 1px;
+
+    background: var(--line-dark);
 
 }
 
 
-.culture-grid h2 {
+.agenda-card {
 
-    margin: 0;
+    min-height: 300px;
 
-    font-size:
-        clamp(2.8rem, 6vw, 5.8rem);
+    display: flex;
 
-    line-height: .93;
+    flex-direction: column;
+
+    padding: 30px;
+
+    background: #e5ddcf;
+
+    border:
+        1px solid var(--line-dark);
+
+    transition:
+        background var(--transition),
+        color var(--transition);
+
+}
+
+
+.agenda-card:hover {
+
+    background: var(--black);
+
+    color: white;
+
+}
+
+
+.agenda-number {
+
+    font-size: .62rem;
+
+    letter-spacing: .14em;
+
+    opacity: .5;
+
+}
+
+
+.agenda-card h3 {
+
+    margin:
+        auto 0 15px;
+
+    font-size: 1.8rem;
 
     font-weight: 400;
 
-    letter-spacing: -.05em;
-
 }
 
 
-.culture-grid p {
+.agenda-card p {
+
+    margin: 0;
 
     color: var(--gray);
 
 }
 
 
-.culture-categories {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 10px;
-
-    margin-top: 60px;
-
-}
-
-
-.culture-categories span {
-
-    padding: 10px 14px;
-
-    border:
-        1px solid rgba(0,0,0,.22);
-
-    font-size: .59rem;
-
-    letter-spacing: .12em;
-
-    text-transform: uppercase;
-
-}
-
-
-/* =========================================================
-   14 · MAPA / DESCUBRE
-   ========================================================= */
-
-.discover {
-
-    position: relative;
-
-    min-height: 82vh;
-
-    background: var(--black);
-
-    color: white;
-
-    overflow: hidden;
-
-}
-
-
-.discover-background {
-
-    position: absolute;
-
-    inset: 0;
-
-}
-
-
-.discover-background img {
-
-    height: 100%;
-
-    object-fit: cover;
-
-}
-
-
-.discover-overlay {
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            90deg,
-            rgba(0,0,0,.84),
-            rgba(0,0,0,.35),
-            rgba(0,0,0,.78)
-        );
-
-}
-
-
-.discover-content {
-
-    position: relative;
-
-    z-index: 2;
-
-    min-height: 82vh;
-
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
-
-}
-
-
-.discover-content h2 {
-
-    margin: 15px 0 25px;
-
-    font-size:
-        clamp(3rem, 8vw, 8rem);
-
-    line-height: .84;
-
-    font-weight: 400;
-
-    letter-spacing: -.06em;
-
-}
-
-
-.discover-content h2 em {
-
-    display: block;
-
-    color: var(--cream-3);
-
-}
-
-
-.discover-content p {
-
-    max-width: 620px;
+.agenda-card:hover p {
 
     color:
-        rgba(255,255,255,.72);
-
-}
-
-
-.discover-actions {
-
-    display: flex;
-
-    flex-wrap: wrap;
-
-    gap: 10px;
-
-    margin-top: 35px;
+        rgba(255,255,255,.58);
 
 }
 
 
 /* =========================================================
-   15 · INFORMACIÓN ÚTIL
+   20 · INFORMACIÓN ÚTIL
    ========================================================= */
 
 .useful {
@@ -1878,7 +2194,7 @@ button {
     display: grid;
 
     grid-template-columns:
-        repeat(3, 1fr);
+        repeat(4, 1fr);
 
     gap: 1px;
 
@@ -1889,18 +2205,23 @@ button {
 
 .useful-card {
 
-    min-height: 260px;
+    min-height: 280px;
 
     padding: 30px;
 
     background: var(--cream);
 
+    border:
+        1px solid var(--line-dark);
+
 }
 
 
-.useful-card-number {
+.useful-card > span {
 
     font-size: .62rem;
+
+    line-height: 1.4;
 
     letter-spacing: .15em;
 
@@ -1931,7 +2252,89 @@ button {
 
 
 /* =========================================================
-   16 · TRAYECTORIA
+   21 · COMUNIDAD
+   ========================================================= */
+
+.community {
+
+    background: #d8d0c2;
+
+}
+
+
+.community-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 100px;
+
+    align-items: start;
+
+}
+
+
+.community-grid h2 {
+
+    max-width: 650px;
+
+    margin: 0;
+
+    font-size:
+        clamp(2.8rem, 6vw, 5.8rem);
+
+    line-height: .92;
+
+    font-weight: 400;
+
+    letter-spacing: -.05em;
+
+}
+
+
+.community-copy {
+
+    max-width: 580px;
+
+}
+
+
+.community-copy p {
+
+    color: var(--gray);
+
+}
+
+
+.community-copy .community-lead {
+
+    font-size:
+        clamp(1.2rem, 2vw, 1.55rem);
+
+    line-height: 1.35;
+
+    color: var(--black);
+
+}
+
+
+.community-actions {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 35px;
+
+}
+
+
+/* =========================================================
+   22 · TRAYECTORIA
    ========================================================= */
 
 .trajectory {
@@ -1971,7 +2374,14 @@ button {
 }
 
 
-.trajectory-copy p {
+.trajectory-copy {
+
+    max-width: 580px;
+
+}
+
+
+.trajectory-copy > p {
 
     color:
         rgba(255,255,255,.66);
@@ -2000,12 +2410,14 @@ button {
 
     font-size: .65rem;
 
+    line-height: 1.4;
+
     letter-spacing: .1em;
 
 }
 
 
-.trajectory-note {
+.small-note {
 
     margin-top: 30px;
 
@@ -2017,7 +2429,7 @@ button {
 
 
 /* =========================================================
-   17 · CONTACTO
+   23 · CONTACTO
    ========================================================= */
 
 .contact {
@@ -2075,103 +2487,7 @@ button {
 
 
 /* =========================================================
-   18 · BOTONES
-   ========================================================= */
-
-.button {
-
-    min-height: 48px;
-
-    display: inline-flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 0 22px;
-
-    border:
-        1px solid transparent;
-
-    font-size: .62rem;
-
-    font-weight: 700;
-
-    letter-spacing: .13em;
-
-    text-transform: uppercase;
-
-    transition:
-        background var(--transition),
-        color var(--transition),
-        border-color var(--transition),
-        transform var(--transition);
-
-}
-
-
-.button:hover {
-
-    transform:
-        translateY(-2px);
-
-}
-
-
-.button-dark {
-
-    background: var(--black);
-
-    color: white;
-
-}
-
-
-.button-dark:hover {
-
-    background: #34332e;
-
-}
-
-
-.button-light {
-
-    border-color:
-        rgba(255,255,255,.4);
-
-    color: white;
-
-}
-
-
-.button-light:hover {
-
-    background: white;
-
-    color: var(--black);
-
-}
-
-
-.button-outline {
-
-    border-color:
-        rgba(0,0,0,.3);
-
-}
-
-
-.button-outline:hover {
-
-    background: var(--black);
-
-    color: white;
-
-}
-
-
-/* =========================================================
-   19 · FOOTER
+   24 · FOOTER
    ========================================================= */
 
 .footer {
@@ -2180,7 +2496,7 @@ button {
 
     color: white;
 
-    padding: 55px 0 100px;
+    padding: 70px 0 120px;
 
 }
 
@@ -2190,14 +2506,16 @@ button {
     display: grid;
 
     grid-template-columns:
-        1.3fr 1fr 1fr;
+        1.4fr 1fr 1fr 1fr;
 
     gap: 50px;
 
 }
 
 
-.footer-brand {
+.footer-brand strong {
+
+    display: block;
 
     font-size: 1rem;
 
@@ -2208,7 +2526,9 @@ button {
 }
 
 
-.footer p {
+.footer-brand p {
+
+    margin: 8px 0;
 
     color: #77746d;
 
@@ -2236,9 +2556,14 @@ button {
 
     font-size: .68rem;
 
+    line-height: 1.4;
+
     letter-spacing: .08em;
 
     text-transform: uppercase;
+
+    transition:
+        color var(--transition);
 
 }
 
@@ -2250,8 +2575,19 @@ button {
 }
 
 
+.footer-signature p {
+
+    margin: 8px 0;
+
+    color: #77746d;
+
+    font-size: .68rem;
+
+}
+
+
 /* =========================================================
-   20 · MINI RADIO
+   25 · MINI PLAYER
    ========================================================= */
 
 .mini-player {
@@ -2264,9 +2600,12 @@ button {
 
     z-index: 1200;
 
-    max-width: 540px;
+    width: min(
+        calc(100% - 40px),
+        540px
+    );
 
-    margin: auto;
+    margin: 0 auto;
 
     padding: 10px 12px;
 
@@ -2292,10 +2631,38 @@ button {
     backdrop-filter:
         blur(15px);
 
+    -webkit-backdrop-filter:
+        blur(15px);
+
+    transform:
+        translateY(140%);
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        transform var(--transition),
+        opacity var(--transition);
+
+}
+
+
+.mini-player.visible {
+
+    transform:
+        translateY(0);
+
+    opacity: 1;
+
+    pointer-events: auto;
+
 }
 
 
 .mini-player-info {
+
+    min-width: 0;
 
     display: flex;
 
@@ -2309,8 +2676,9 @@ button {
 .mini-live {
 
     width: 7px;
-
     height: 7px;
+
+    flex: 0 0 auto;
 
     border-radius: 50%;
 
@@ -2325,6 +2693,8 @@ button {
 
     font-size: .62rem;
 
+    line-height: 1.4;
+
     letter-spacing: .1em;
 
 }
@@ -2338,6 +2708,8 @@ button {
 
     font-size: .56rem;
 
+    line-height: 1.4;
+
     letter-spacing: .08em;
 
 }
@@ -2346,8 +2718,9 @@ button {
 .mini-player button {
 
     width: 38px;
-
     height: 38px;
+
+    flex: 0 0 auto;
 
     display: grid;
 
@@ -2366,7 +2739,35 @@ button {
 
 
 /* =========================================================
-   21 · ACCESIBILIDAD
+   26 · ANIMACIONES DE ENTRADA
+   ========================================================= */
+
+.reveal {
+
+    opacity: 0;
+
+    transform:
+        translateY(25px);
+
+    transition:
+        opacity .7s ease,
+        transform .7s ease;
+
+}
+
+
+.reveal.is-visible {
+
+    opacity: 1;
+
+    transform:
+        translateY(0);
+
+}
+
+
+/* =========================================================
+   27 · ACCESIBILIDAD
    ========================================================= */
 
 :focus-visible {
@@ -2388,25 +2789,33 @@ button {
     *,
     *::before,
     *::after {
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        transition-duration:
+            .01ms !important;
+
     }
 
 }
 
 
 /* =========================================================
-   22 · TABLET
+   28 · TABLET
    ========================================================= */
 
-@media (max-width: 950px) {
+@media (max-width: 1050px) {
 
     .nav-links {
 
         position: fixed;
 
-        top: 76px;
+        top: var(--header-height);
+
         left: 0;
         right: 0;
 
@@ -2418,10 +2827,18 @@ button {
 
         gap: 0;
 
+        max-height:
+            calc(100vh - var(--header-height));
+
+        overflow-y: auto;
+
         background:
             rgba(17,17,15,.98);
 
         backdrop-filter:
+            blur(16px);
+
+        -webkit-backdrop-filter:
             blur(16px);
 
     }
@@ -2443,6 +2860,13 @@ button {
         border-bottom:
             1px solid rgba(255,255,255,.08);
 
+        opacity: 1;
+
+    }
+
+
+    .nav-links a::after {
+        display: none;
     }
 
 
@@ -2469,7 +2893,7 @@ button {
     }
 
 
-    .download-grid {
+    .useful-grid {
 
         grid-template-columns:
             repeat(2, 1fr);
@@ -2477,7 +2901,7 @@ button {
     }
 
 
-    .useful-grid {
+    .agenda-grid {
 
         grid-template-columns:
             repeat(2, 1fr);
@@ -2487,11 +2911,12 @@ button {
 
     .production,
     .production-reverse,
-    .remember-grid,
+    .project-grid,
     .radio-layout,
     .culture-grid,
+    .community-grid,
     .trajectory-grid,
-    .download-intro {
+    .intro-grid {
 
         grid-template-columns: 1fr;
 
@@ -2511,7 +2936,14 @@ button {
     .footer-grid {
 
         grid-template-columns:
-            1fr 1fr;
+            1.5fr 1fr 1fr;
+
+    }
+
+
+    .footer-signature {
+
+        grid-column: 1 / -1;
 
     }
 
@@ -2519,10 +2951,17 @@ button {
 
 
 /* =========================================================
-   23 · MOBILE
+   29 · MOBILE
    ========================================================= */
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
+
+    :root {
+
+        --header-height: 68px;
+
+    }
+
 
     .container {
 
@@ -2542,64 +2981,128 @@ button {
     }
 
 
+    .section-heading {
+
+        margin-bottom: 45px;
+
+    }
+
+
+    .section-heading h2 {
+
+        font-size:
+            clamp(2.5rem, 13vw, 4.5rem);
+
+    }
+
+
+    /* HEADER */
+
+    .nav {
+
+        min-height:
+            var(--header-height);
+
+    }
+
+
+    .brand {
+
+        font-size: .82rem;
+
+    }
+
+
+    /* HERO */
+
     .hero-content {
 
-        padding-top: 105px;
+        padding-top: 95px;
 
-        padding-bottom: 30px;
+        padding-bottom: 28px;
+
+    }
+
+
+    .hero-top,
+    .hero-bottom {
+
+        align-items: flex-start;
 
     }
 
 
     .hero-top span,
-    .hero-bottom > span {
+    .hero-bottom span {
 
-        font-size: .52rem;
+        max-width: 145px;
 
-    }
+        font-size: .50rem;
 
-
-    .hero-bottom {
-
-        align-items: flex-end;
+        line-height: 1.5;
 
     }
 
 
-    .hero-bottom > span {
-
-        max-width: 150px;
-
-    }
-
-
-    .hero-title {
+    .hero-center h1 {
 
         font-size:
-            clamp(4rem, 20vw, 6rem);
+            clamp(4.4rem, 21vw, 7rem);
 
     }
 
 
-    .territory-content {
+    .hero-center h2 {
 
-        min-height: 75vh;
+        max-width: 330px;
+
+        margin-top: 22px;
+
+        font-size: .95rem;
+
+        line-height: 1.35;
 
     }
 
 
-    .territory-text h2 {
+    .hero-description {
+
+        max-width: 330px;
+
+        margin-top: 18px;
+
+        font-size: .88rem;
+
+    }
+
+
+    .hero-center .button {
+
+        width: 100%;
+
+    }
+
+
+    /* INTRO */
+
+    .intro-grid h2 {
 
         font-size:
-            clamp(3rem, 15vw, 5rem);
+            clamp(2.8rem, 13vw, 4.5rem);
 
     }
 
 
-    .universe-grid,
-    .archive-grid,
-    .download-grid,
-    .useful-grid {
+    .intro-copy .intro-lead {
+
+        font-size: 1.15rem;
+
+    }
+
+
+    /* UNIVERSO */
+
+    .universe-grid {
 
         grid-template-columns: 1fr;
 
@@ -2608,19 +3111,166 @@ button {
 
     .universe-card {
 
-        min-height: 280px;
+        min-height: 275px;
+
+        padding: 27px;
 
     }
 
+
+    /* PRODUCCIONES */
 
     .production {
 
         padding: 45px 0;
 
+        gap: 32px;
+
     }
 
 
-    .radio-card {
+    .production-info h3 {
+
+        font-size:
+            clamp(2.2rem, 12vw, 4rem);
+
+    }
+
+
+    /* PROJECT */
+
+    .project-title h2 {
+
+        font-size:
+            clamp(3.3rem, 16vw, 5.5rem);
+
+    }
+
+
+    .project-copy .project-lead {
+
+        font-size: 1.2rem;
+
+    }
+
+
+    .project-actions .button {
+
+        width: 100%;
+
+    }
+
+
+    /* CULTURA */
+
+    .culture-grid h2 {
+
+        font-size:
+            clamp(2.8rem, 13vw, 4.6rem);
+
+    }
+
+
+    .culture-categories {
+
+        margin-top: 40px;
+
+    }
+
+
+    /* DESCUBRE */
+
+    .discover-section {
+
+        min-height: 700px;
+
+    }
+
+
+    .discover-content h2 {
+
+        font-size:
+            clamp(3rem, 15vw, 5.5rem);
+
+    }
+
+
+    .discover-categories {
+
+        gap: 7px;
+
+    }
+
+
+    .discover-categories span {
+
+        padding: 8px 10px;
+
+        font-size: .52rem;
+
+    }
+
+
+    .discover-actions .button {
+
+        width: 100%;
+
+    }
+
+
+    /* MAPA */
+
+    .map-preview {
+
+        min-height: 350px;
+
+    }
+
+
+    .map-placeholder {
+
+        padding: 25px;
+
+    }
+
+
+    /* ARCHIVO */
+
+    .archive-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .archive-card {
+
+        min-height: 270px;
+
+    }
+
+
+    .archive-download {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 28px;
+
+    }
+
+
+    /* RADIO */
+
+    .radio-layout {
+
+        gap: 45px;
+
+    }
+
+
+    .radio-player-card {
 
         padding: 25px;
 
@@ -2630,8 +3280,117 @@ button {
     .radio-disc {
 
         width: 145px;
-
         height: 145px;
+
+        margin: 35px auto;
+
+    }
+
+
+    .radio-controls {
+
+        gap: 15px;
+
+    }
+
+
+    .radio-secondary {
+
+        margin-top: 50px;
+
+        gap: 10px 18px;
+
+    }
+
+
+    /* AGENDA */
+
+    .agenda-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .agenda-card {
+
+        min-height: 260px;
+
+    }
+
+
+    /* INFORMACIÓN */
+
+    .useful-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .useful-card {
+
+        min-height: 240px;
+
+    }
+
+
+    /* COMUNIDAD */
+
+    .community-grid h2 {
+
+        font-size:
+            clamp(2.8rem, 13vw, 4.6rem);
+
+    }
+
+
+    .community-actions .button {
+
+        width: 100%;
+
+    }
+
+
+    /* TRAYECTORIA */
+
+    .trajectory h2 {
+
+        font-size:
+            clamp(2.8rem, 13vw, 4.6rem);
+
+    }
+
+
+    /* CONTACTO */
+
+    .contact-content h2 {
+
+        font-size:
+            clamp(3rem, 15vw, 5.5rem);
+
+    }
+
+
+    .contact-buttons {
+
+        flex-direction: column;
+
+    }
+
+
+    .contact-buttons .button {
+
+        width: 100%;
+
+    }
+
+
+    /* FOOTER */
+
+    .footer {
+
+        padding-bottom: 130px;
 
     }
 
@@ -2645,32 +3404,94 @@ button {
     }
 
 
+    .footer-signature {
+
+        grid-column: auto;
+
+    }
+
+
+    /* MINI PLAYER */
+
     .mini-player {
 
         left: 10px;
-
         right: 10px;
-
         bottom: 10px;
 
-    }
-
-
-    .contact-buttons,
-    .remember-actions,
-    .discover-actions {
-
-        flex-direction: column;
-
-    }
-
-
-    .contact-buttons .button,
-    .remember-actions .button,
-    .discover-actions .button {
-
-        width: 100%;
+        width:
+            calc(100% - 20px);
 
     }
 
 }
+
+
+/* =========================================================
+   30 · MOBILE PEQUEÑO
+   ========================================================= */
+
+@media (max-width: 400px) {
+
+    .container {
+
+        width:
+            calc(100% - 24px);
+
+    }
+
+
+    .hero-center h1 {
+
+        font-size:
+            4.1rem;
+
+    }
+
+
+    .hero-top span,
+    .hero-bottom span {
+
+        max-width: 120px;
+
+        font-size: .46rem;
+
+    }
+
+
+    .button {
+
+        padding-left: 16px;
+        padding-right: 16px;
+
+        font-size: .57rem;
+
+    }
+
+
+    .radio-player-card {
+
+        padding: 20px;
+
+    }
+
+
+    .radio-volume label {
+
+        display: none;
+
+    }
+
+
+    .archive-download {
+
+        padding: 23px;
+
+    }
+
+}
+
+
+/* =========================================================
+   FIN · OCARINA UNIVERSO V16
+   ========================================================= */
