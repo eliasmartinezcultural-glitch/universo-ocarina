@@ -1,71 +1,16 @@
 {
   "collection": "Mi Chañar · Edición 01",
   "currency": "ARS",
-  "statusLegend": {
-    "available": "Disponible",
-    "soon": "Próximamente",
-    "lab": "En laboratorio"
-  },
+  "statusLegend": {"available":"Disponible","soon":"Próximamente","lab":"En laboratorio"},
   "products": [
-    {
-      "sku": "OC-LAB-MAP-001",
-      "name": "Mapa Mi Chañar",
-      "category": "mapa",
-      "type": "Mapa decorativo",
-      "status": "soon",
-      "price": null,
-      "description": "Interpretación artística del territorio de San Patricio del Chañar, pensada como pieza digital para conservar, imprimir o regalar.",
-      "format": "Lámina digital de alta resolución",
-      "includes": ["Archivo digital", "Diseño original Ocarina", "Uso personal"],
-      "accent": "territorio"
-    },
-    {
-      "sku": "OC-LAB-RUR-002",
-      "name": "Chañar Rural",
-      "category": "lamina",
-      "type": "Lámina digital",
-      "status": "soon",
-      "price": null,
-      "description": "Una composición inspirada en chacras, álamos, caminos, agua y paisaje productivo del valle.",
-      "format": "Lámina digital de alta resolución",
-      "includes": ["Archivo digital", "Diseño original Ocarina", "Uso personal"],
-      "accent": "rural"
-    },
-    {
-      "sku": "OC-LAB-RIO-003",
-      "name": "Río Neuquén",
-      "category": "postal",
-      "type": "Postal digital",
-      "status": "soon",
-      "price": null,
-      "description": "Postal artística inspirada en el río y el paisaje que acompaña al Chañar.",
-      "format": "Postal digital",
-      "includes": ["Archivo digital", "Formato postal", "Diseño original Ocarina"],
-      "accent": "rio"
-    },
-    {
-      "sku": "OC-LAB-VP-004",
-      "name": "Villa Pelón",
-      "category": "pixel",
-      "type": "Pixel art",
-      "status": "soon",
-      "price": null,
-      "description": "Escena pixel art conectada con el universo de Villa Pelón — Historia Viva.",
-      "format": "Arte digital",
-      "includes": ["Archivo digital", "Arte original Ocarina", "Parte del universo Historia Viva"],
-      "accent": "pixel"
-    },
-    {
-      "sku": "OC-LAB-PACK-005",
-      "name": "Pack Mi Chañar",
-      "category": "pack",
-      "type": "Colección digital",
-      "status": "lab",
-      "price": null,
-      "description": "Una selección de piezas del universo Mi Chañar reunidas en una sola colección.",
-      "format": "Colección digital",
-      "includes": ["Varias piezas digitales", "Diseño coherente de colección", "Entrega digital"],
-      "accent": "pack"
-    }
+    {"sku":"OC-LAB-MAP-001","name":"Mapa Mi Chañar","category":"mapa","type":"Mapa decorativo","status":"soon","price":null,"description":"Interpretación artística del territorio de San Patricio del Chañar, pensada como pieza digital para conservar, imprimir o regalar.","format":"Lámina digital de alta resolución","includes":["Archivo digital","Diseño original Ocarina","Uso personal"],"accent":"territorio"},
+    {"sku":"OC-LAB-MAP-006","name":"Mapa Ilustrado del Valle","category":"mapa","type":"Mapa ilustrado · IA","status":"lab","price":null,"description":"Mapa artístico conceptual del paisaje del valle, desarrollado con herramientas de inteligencia artificial y dirección creativa de Ocarina. No pretende sustituir una cartografía oficial.","format":"Póster digital de alta resolución","includes":["Archivo digital","Composición dirigida por Ocarina","Uso personal"],"accent":"ia-mapa"},
+    {"sku":"OC-LAB-RUR-002","name":"Chañar Rural","category":"lamina","type":"Lámina digital","status":"soon","price":null,"description":"Una composición inspirada en chacras, álamos, caminos, agua y paisaje productivo del valle.","format":"Lámina digital de alta resolución","includes":["Archivo digital","Diseño original Ocarina","Uso personal"],"accent":"rural"},
+    {"sku":"OC-LAB-RIO-003","name":"Río Neuquén","category":"postal","type":"Postal digital","status":"soon","price":null,"description":"Postal artística inspirada en el río y el paisaje que acompaña al Chañar.","format":"Postal digital","includes":["Archivo digital","Formato postal","Diseño original Ocarina"],"accent":"rio"},
+    {"sku":"OC-LAB-RIO-007","name":"Postales del Río · Serie 01","category":"postal","type":"Colección de postales · IA","status":"lab","price":null,"description":"Serie visual de postales inspiradas en el Río Neuquén, con escenas generadas y dirigidas con inteligencia artificial. Cada pieza será curada antes de entrar al catálogo.","format":"Colección digital de 5 postales","includes":["5 archivos digitales","Dirección visual Ocarina","Uso personal"],"accent":"ia-rio"},
+    {"sku":"OC-LAB-VP-004","name":"Villa Pelón","category":"pixel","type":"Pixel art","status":"soon","price":null,"description":"Escena pixel art conectada con el universo de Villa Pelón — Historia Viva.","format":"Arte digital","includes":["Archivo digital","Arte original Ocarina","Parte del universo Historia Viva"],"accent":"pixel"},
+    {"sku":"OC-LAB-POST-008","name":"Póster Chañar · Tierra y Agua","category":"poster","type":"Póster artístico · IA","status":"lab","price":null,"description":"Pieza gráfica de pared que combina paisaje, territorio y una estética editorial patagónica. La imagen puede desarrollarse con IA y luego ser intervenida y curada por Ocarina.","format":"Póster digital de alta resolución","includes":["Archivo listo para imprimir","Dirección artística Ocarina","Uso personal"],"accent":"poster"},
+    {"sku":"OC-LAB-POST-009","name":"Póster Chañar de Noche","category":"poster","type":"Póster artístico · IA","status":"lab","price":null,"description":"Interpretación nocturna y atmosférica de San Patricio del Chañar: luces, siluetas, paisaje y cielo patagónico.","format":"Póster digital de alta resolución","includes":["Archivo listo para imprimir","Dirección artística Ocarina","Uso personal"],"accent":"noche"},
+    {"sku":"OC-LAB-PACK-005","name":"Pack Mi Chañar","category":"pack","type":"Colección digital","status":"lab","price":null,"description":"Una selección de piezas del universo Mi Chañar reunidas en una sola colección.","format":"Colección digital","includes":["Varias piezas digitales","Diseño coherente de colección","Entrega digital"],"accent":"pack"}
   ]
 }
