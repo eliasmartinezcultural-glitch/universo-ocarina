@@ -1,0 +1,71 @@
+{
+  "collection": "Mi Chañar · Edición 01",
+  "currency": "ARS",
+  "statusLegend": {
+    "available": "Disponible",
+    "soon": "Próximamente",
+    "lab": "En laboratorio"
+  },
+  "products": [
+    {
+      "sku": "OC-LAB-MAP-001",
+      "name": "Mapa Mi Chañar",
+      "category": "mapa",
+      "type": "Mapa decorativo",
+      "status": "soon",
+      "price": null,
+      "description": "Interpretación artística del territorio de San Patricio del Chañar, pensada como pieza digital para conservar, imprimir o regalar.",
+      "format": "Lámina digital de alta resolución",
+      "includes": ["Archivo digital", "Diseño original Ocarina", "Uso personal"],
+      "accent": "territorio"
+    },
+    {
+      "sku": "OC-LAB-RUR-002",
+      "name": "Chañar Rural",
+      "category": "lamina",
+      "type": "Lámina digital",
+      "status": "soon",
+      "price": null,
+      "description": "Una composición inspirada en chacras, álamos, caminos, agua y paisaje productivo del valle.",
+      "format": "Lámina digital de alta resolución",
+      "includes": ["Archivo digital", "Diseño original Ocarina", "Uso personal"],
+      "accent": "rural"
+    },
+    {
+      "sku": "OC-LAB-RIO-003",
+      "name": "Río Neuquén",
+      "category": "postal",
+      "type": "Postal digital",
+      "status": "soon",
+      "price": null,
+      "description": "Postal artística inspirada en el río y el paisaje que acompaña al Chañar.",
+      "format": "Postal digital",
+      "includes": ["Archivo digital", "Formato postal", "Diseño original Ocarina"],
+      "accent": "rio"
+    },
+    {
+      "sku": "OC-LAB-VP-004",
+      "name": "Villa Pelón",
+      "category": "pixel",
+      "type": "Pixel art",
+      "status": "soon",
+      "price": null,
+      "description": "Escena pixel art conectada con el universo de Villa Pelón — Historia Viva.",
+      "format": "Arte digital",
+      "includes": ["Archivo digital", "Arte original Ocarina", "Parte del universo Historia Viva"],
+      "accent": "pixel"
+    },
+    {
+      "sku": "OC-LAB-PACK-005",
+      "name": "Pack Mi Chañar",
+      "category": "pack",
+      "type": "Colección digital",
+      "status": "lab",
+      "price": null,
+      "description": "Una selección de piezas del universo Mi Chañar reunidas en una sola colección.",
+      "format": "Colección digital",
+      "includes": ["Varias piezas digitales", "Diseño coherente de colección", "Entrega digital"],
+      "accent": "pack"
+    }
+  ]
+}
