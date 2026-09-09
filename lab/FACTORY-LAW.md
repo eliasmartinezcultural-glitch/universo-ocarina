@@ -4,40 +4,18 @@
 
 **RECIBO PEDIDO → FABRICO → DESCARGO → ENVÍO → FIN.**
 
-Ocarina Lab no es un museo de herramientas ni un proyecto de software por sí mismo. Es una **fábrica virtual de producción rápida** para que una persona pueda convertir un pedido en una pieza terminada con la menor cantidad posible de pasos.
+Ocarina Lab no es un museo de herramientas ni un proyecto de software por sí mismo. Es una **fábrica virtual de producción rápida** para convertir un pedido en una pieza terminada con la menor cantidad posible de pasos.
 
 ## 2. Principio rector
 
-Todo diseño, código, base de datos, generador, plantilla y recurso debe reducir al menos una de estas variables:
-
-- tiempo de fabricación;
-- cantidad de decisiones repetidas;
-- cantidad de trabajo manual;
-- posibilidad de error;
-- dificultad para localizar el archivo final.
+Todo diseño, código, base de datos, generador, plantilla y recurso debe reducir tiempo, trabajo repetido, errores o dificultad de entrega.
 
 Si una función agrega complejidad pero no acelera, mejora calidad o habilita personalización útil, **no pertenece a la fábrica**.
 
 ## 3. Flujo universal
 
 ```text
-PEDIDO
-  ↓
-ELEGIR FAMILIA / PLANTILLA
-  ↓
-CARGAR O CAMBIAR DATOS
-  ↓
-PREVISUALIZAR
-  ↓
-AJUSTAR
-  ↓
-FABRICAR MASTER
-  ↓
-DESCARGAR
-  ↓
-ENVIAR
-  ↓
-FIN
+PEDIDO → PLANTILLA → CAMBIOS → PREVIEW → FABRICAR → DESCARGAR → ENVIAR → FIN
 ```
 
 La investigación, curaduría y preparación existen para que este circuito sea rápido cuando llega el pedido.
@@ -46,213 +24,120 @@ La investigación, curaduría y preparación existen para que este circuito sea 
 
 ### MODO CATÁLOGO
 
-Producto previamente fabricado.
-
-**Buscar → abrir → descargar → enviar.**
+**Buscar → descargar → enviar.**
 
 Objetivo: segundos.
 
 ### MODO A MEDIDA
 
-Producto basado en una plantilla ya preparada.
-
-**Elegir plantilla → modificar variables → previsualizar → fabricar → descargar → enviar.**
+**Elegir plantilla → cambiar variables → preview → fabricar → descargar → enviar.**
 
 Objetivo: minutos, no horas.
 
-Un trabajo a medida no debe convertirse en empezar desde cero.
+Nunca empezar desde cero si una plantilla puede resolver el pedido.
 
-## 5. La personalización debe ser paramétrica
+## 5. Personalización paramétrica
 
-Cuando sea posible, una pieza se modifica mediante variables simples:
-
-- título;
-- subtítulo;
-- nombre;
-- fecha;
-- ubicación;
-- fotografía;
-- texto;
-- colores permitidos;
-- tipografía disponible;
-- cantidad de elementos;
-- orientación;
-- tamaño;
-- serie;
-- nivel de detalle;
-- variante artística.
+Cuando sea posible, una pieza se modifica mediante variables simples: título, subtítulo, nombre, fecha, ubicación, fotografía, texto, colores permitidos, orientación, tamaño, serie, nivel de detalle y variante artística.
 
 La plantilla hace el trabajo estructural. El creador decide el contenido.
 
-## 6. Regla 80/20 de fabricación
+## 6. Regla 80/20
 
-El sistema debe buscar que aproximadamente:
+**80 % = estructura automática/reutilizable.**
 
-**80 % = estructura automática / reutilizable**
+**20 % = decisión creativa.**
 
-**20 % = decisión creativa del creador**
+Automatizar lo repetitivo; conservar humana la mirada.
 
-La creatividad no debe desperdiciarse en tareas repetitivas.
+## 7. Identidad visual obligatoria
 
-## 7. Regla de una sola descarga
+La fábrica debe sentirse como un **terrunio rural digital**: chacras, álamos, canales, río, bardas, caminos rurales, madera, tierra, papel, cielo y objetos cotidianos del campo reinterpretados artísticamente.
 
-Cada producto fabricado debe terminar con un archivo claramente identificable.
+**Toda la interfaz y toda nueva plantilla deben trabajar con colores pastel.**
 
-Idealmente:
+Paleta base: crema, arena, trigo, salvia, oliva suave, celeste río, cielo, rosa tierra, terracota pastel, lavanda tierra, carbón suave y blanco.
 
-```text
-SKU_NOMBRE_VERSION.ext
-```
+No usar negro puro ni colores fluorescentes como lenguaje habitual de la fábrica.
 
-El creador no debe buscar entre carpetas técnicas para encontrar el resultado.
+## 8. Sistema de salida
 
-## 8. Regla de cero fricción
+Toda pieza gráfica debe poder conservar un **MASTER** de máxima calidad y generar copias optimizadas para comunicación.
 
-La interfaz debe priorizar:
+Salidas estándar:
 
-1. qué quiero fabricar;
-2. qué tengo que cambiar;
-3. cómo queda;
-4. fabricar;
-5. descargar.
+- WhatsApp: JPG 1080×1080;
+- Instagram cuadrado: JPG 1080×1080;
+- Instagram vertical: JPG 1080×1350;
+- Story/Reel: JPG 1080×1920;
+- Facebook: JPG 1200×630;
+- general/presentación: JPG 1600×900.
 
-No esconder estas acciones detrás de paneles innecesarios.
+Las copias se comprimen para velocidad y compatibilidad; el master nunca se reemplaza.
 
-## 9. Regla artística
+## 9. Regla de descarga fácil
 
-La velocidad no significa diseño genérico.
+El creador debe encontrar botones de descarga con lenguaje humano:
 
-La fábrica debe permitir:
+**MASTER · WHATSAPP · INSTAGRAM · STORY · FACEBOOK**
 
-- composiciones visuales fuertes;
-- estética Ocarina;
-- variantes artísticas;
-- textura;
-- capas;
-- ilustración;
-- fotografía;
-- pixel art;
-- mapas interpretativos;
-- tipografía editorial;
-- series coherentes;
-- mezcla de información y arte.
+No obligar a conocer formatos técnicos para entregar un producto.
 
-**Automatizar la estructura; conservar humana la mirada.**
+Los nombres deben seguir:
 
-## 10. Regla de plantillas maestras
+`SKU_nombre_formato.ext`
 
-Cada familia debe construir primero una pequeña cantidad de plantillas maestras de alta calidad.
+## 10. Regla comercial
 
-Ejemplos:
+La fábrica debe mostrar una **referencia interna de precio** por familia, separada del costo técnico de fabricación.
 
-- Postal editorial;
-- Postal fotográfica;
-- Lámina territorial;
-- Póster histórico;
-- Mapa artístico;
-- Guía turística;
-- Guía de servicios;
-- Ficha de prestador;
-- Pack temático;
-- Escena pixel art;
-- Producto educativo.
+El precio final depende de valor creativo, complejidad, personalización, investigación, uso y urgencia.
 
-Después se multiplican mediante variables, no mediante copias manuales.
-
-## 11. Regla de pedido
-
-Un pedido debe poder traducirse rápidamente a una ficha mínima:
-
-```text
-TIPO:
-OBJETIVO:
-NOMBRE / TEMA:
-DATOS NECESARIOS:
-FORMATO:
-VARIANTE:
-ENTREGA:
-```
-
-Si faltan datos, la fábrica debe mostrar exactamente qué falta. No debe obligar al creador a reconstruir mentalmente el pedido.
-
-## 12. Regla de reutilización
+## 11. Reutilización
 
 Cada trabajo terminado debe preguntarse:
 
 > ¿Puede transformarse en otro producto?
 
-Una guía puede generar:
+Una guía puede alimentar postal, lámina, póster, pack, ficha, educativo o mapa. Una investigación puede alimentar múltiples productos.
 
-- postal;
-- lámina;
-- póster;
-- pack;
-- ficha;
-- contenido educativo;
-- mapa.
+## 12. Calidad factual
 
-Una investigación puede alimentar múltiples productos.
-
-La fábrica debe convertir **una investigación en una familia de productos**.
-
-## 13. Regla de calidad
-
-Rapidez jamás significa inventar información.
-
-Los datos territoriales deben conservar su procedencia y estado de verificación. Una pieza artística puede interpretar; una pieza factual debe demostrar.
+Rapidez jamás significa inventar información. Los datos territoriales deben conservar procedencia y estado de verificación. Una pieza artística puede interpretar; una pieza factual debe demostrar.
 
 **Rápido + bonito + útil + verificable.**
 
-## 14. Regla de archivos
+## 13. Archivos
 
-Separar conceptualmente:
+Separar datos de investigación, plantillas, masters, previews, productos publicables y documentación técnica. Nunca guardar datos personales de compradores en el repositorio público.
 
-- datos de investigación;
-- plantillas;
-- masters;
-- previews;
-- productos publicables;
-- documentación técnica.
+## 14. Tecnología
 
-Nunca mezclar información privada de compradores con el repositorio público.
+Ocarina Lab debe funcionar sin instalación, ser rápido, tolerar conexiones normales y usar estándares simples.
 
-## 15. Regla de tecnología
+La interfaz puede ser sofisticada por dentro y sencilla por fuera.
 
-Ocarina Lab debe funcionar como una herramienta web:
+## 15. Prueba de fuego
 
-- sin instalación;
-- accesible desde PC y celular cuando sea razonable;
-- rápida;
-- tolerante a conexiones normales;
-- basada en archivos y estándares simples;
-- con degradación razonable cuando una función avanzada no está disponible.
+Antes de considerar terminada una herramienta:
 
-## 16. Regla de expansión
-
-La fábrica puede crecer indefinidamente en familias y plantillas, pero el flujo operativo no debe crecer en complejidad.
-
-Más productos **no significa** más pasos.
-
-## 17. Prueba de fuego
-
-Antes de considerar terminada una herramienta, debe poder responder afirmativamente:
-
-- ¿Puedo entenderla rápidamente?
-- ¿Puedo modificar lo necesario sin tocar código?
-- ¿Veo el resultado antes de fabricarlo?
-- ¿Puedo generar el archivo final?
-- ¿Puedo descargarlo directamente?
-- ¿Sé dónde encontrarlo después?
-- ¿Puedo reutilizar la plantilla para otro pedido?
-- ¿La pieza mantiene calidad artística?
+- ¿Entiendo qué hacer inmediatamente?
+- ¿Puedo cambiar lo necesario sin tocar código?
+- ¿Veo el resultado?
+- ¿Puedo fabricar?
+- ¿Puedo descargar el master?
+- ¿Puedo descargar una versión para el canal que necesito?
+- ¿Sé dónde encontrar el archivo?
+- ¿La plantilla puede reutilizarse?
+- ¿La pieza mantiene identidad artística?
 - ¿Los datos son honestos y trazables?
 
-Si la respuesta es no, la herramienta sigue en desarrollo.
+Si no, sigue en desarrollo.
 
-## 18. Mandamiento final
+## 16. Mandamiento final
 
 > **OCARINA CREA UNA VEZ. OCARINA REUTILIZA MUCHAS VECES.**
 >
 > **EL CLIENTE PIDE. EL CREADOR FABRICA. LA MÁQUINA ACELERA. EL ARTE DIFERENCIA.**
 >
-> **FABRICAR → DESCARGAR → ENVIAR → FIN.**
+> **MASTER + SALIDA SOCIAL → DESCARGAR → ENVIAR → FIN.**
