@@ -1,0 +1,25 @@
+{
+  "version": "1.0",
+  "purpose": "Registro interno de referencias reales para productos fieles de San Patricio del Chañar.",
+  "audience": "OCARINA_TEAM_ONLY",
+  "privacy": "No guardar aquí fotografías privadas ni datos personales innecesarios.",
+  "statuses": ["candidate", "verified", "restricted", "archived"],
+  "referenceFields": [
+    "referenceId",
+    "status",
+    "place",
+    "zone",
+    "subject",
+    "sourceType",
+    "source",
+    "author",
+    "usageAuthorization",
+    "captureDate",
+    "verifiedDate",
+    "verifiedBy",
+    "territorialNotes",
+    "allowedProducts",
+    "fileLocalOrPrivate"
+  ],
+  "references": []
+}
