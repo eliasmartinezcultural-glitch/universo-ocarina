@@ -1,0 +1,40 @@
+{
+  "title":"San Patricio del Chañar · Registro de fuentes Ocarina",
+  "version":"1.0",
+  "updated":"2026-09-09",
+  "purpose":"Jerarquizar fuentes para producir mapas, guías, atlas, rutas, fichas de prestadores y productos editoriales con trazabilidad.",
+  "tiers":{
+    "A":"Fuente oficial o primaria: municipio, provincia, catastro, organismo público, establecimiento con información propia.",
+    "B":"Fuente institucional o sectorial: cámaras, turismo especializado, entidades productivas, medios oficiales de organismos.",
+    "C":"Fuente comunitaria/mercado: Google Maps/Places, Tripadvisor, blogs, directorios, redes sociales. Sirve para descubrir y contrastar; no basta por sí sola para afirmar habilitación, horarios o permanencia.",
+    "D":"Fuente secundaria no corroborada: blogs antiguos, agregadores, contenido sin fecha o sin procedencia. Solo genera pistas.",
+    "E":"Contenido generado por Ocarina: interpretación artística, relevamiento propio o síntesis. Debe estar etiquetado como tal."
+  },
+  "sources":[
+    {"id":"SRC-MUNI","tier":"A","name":"Municipalidad de San Patricio del Chañar","url":"https://sanpatricio.gob.ar/","uses":["identidad","atractivos","alojamiento","agenda","servicios","historia"]},
+    {"id":"SRC-MUNI-ID","tier":"A","name":"Municipalidad · Nuestra Identidad","url":"https://www.sanpatricio.gob.ar/identidad","uses":["historia","territorio","Tratayén","Fortín Chañar","desarrollo productivo"]},
+    {"id":"SRC-MUNI-QH","tier":"A","name":"Municipalidad · Qué hacer","url":"https://sanpatricio.gob.ar/quehacer","uses":["bodegas","agroturismo","Fiesta del Pelón","atractivos"]},
+    {"id":"SRC-MUNI-NUESTRA","tier":"A","name":"Municipalidad · Nuestra Ciudad","url":"https://sanpatricio.gob.ar/nuestra","uses":["balneario","espacios públicos","infraestructura turística"]},
+    {"id":"SRC-MUNI-DORMIR","tier":"A","name":"Municipalidad · Dónde dormir","url":"https://sanpatricio.gob.ar/dormir","uses":["alojamiento"]},
+    {"id":"SRC-TUR-NQN","tier":"A","name":"Turismo Neuquén","url":"https://turismo.neuquen.gob.ar/","uses":["turismo","bodegas","prestadores","habilitaciones","rutas"]},
+    {"id":"SRC-TUR-VINO","tier":"A","name":"Turismo Neuquén · Donde vive el vino","url":"https://turismo.neuquen.gob.ar/que-hacer-donde-vive-el-vino/","uses":["bodegas","rutas","enoturismo"]},
+    {"id":"SRC-TUR-SCH","tier":"A","name":"Turismo Neuquén · Bodega Schroeder","url":"https://turismo.neuquen.gob.ar/alojamientos/bodega-schroeder/","uses":["prestador","ubicación","contacto","agroturismo"]},
+    {"id":"SRC-CATASTRO","tier":"A","name":"Dirección Provincial de Catastro · Mapoteca Digital","url":"https://dpc.neuquen.gob.ar/Mapa","uses":["cartografía","mapas históricos","parcelario como referencia"]},
+    {"id":"SRC-COPADE","tier":"A","name":"COPADE","url":"https://www.copade.gob.ar/","uses":["territorio","red vial","región","planificación"]},
+    {"id":"SRC-NQNINF","tier":"A","name":"Neuquén Informa","url":"https://www.neuqueninforma.gob.ar/","uses":["novedades","turismo","obras","eventos","prestadores"]},
+    {"id":"SRC-ARG","tier":"A","name":"Argentina.gob.ar","url":"https://www.argentina.gob.ar/","uses":["programas","turismo","marcos institucionales"]},
+    {"id":"SRC-WOA","tier":"B","name":"Wines of Argentina · Blog","url":"https://blog.winesofargentina.com/","uses":["vitivinicultura","bodegas","enoturismo","contexto productivo"]},
+    {"id":"SRC-TRIP","tier":"C","name":"Tripadvisor","url":"https://www.tripadvisor.com/","uses":["descubrimiento de restaurantes","opiniones","experiencias","detección de cambios"]},
+    {"id":"SRC-MAPS","tier":"C","name":"Google Maps / Places","url":"https://www.google.com/maps","uses":["descubrimiento de negocios","ubicaciones","horarios publicados","reseñas","navegación"]},
+    {"id":"SRC-OSM","tier":"C","name":"OpenStreetMap","url":"https://www.openstreetmap.org/","uses":["red vial","caminos","toponimia","cartografía colaborativa"]},
+    {"id":"SRC-BLOG-DESAFIO","tier":"D","name":"Neuquén el Desafío","url":"https://www.neuqueneldesafio.com.ar/blog/62-san-patricio-del-chanar/","uses":["pistas históricas","documentos reproducidos","contexto histórico"]},
+    {"id":"SRC-WIKI","tier":"D","name":"Wikipedia","url":"https://es.wikipedia.org/wiki/San_Patricio_del_Cha%C3%B1ar","uses":["orientación inicial","pistas bibliográficas"],"warning":"Nunca usar como única fuente de una afirmación sensible o histórica."}
+  ],
+  "policy":{
+    "discovery":"Las fuentes C y D sirven para descubrir entidades, nombres, cambios y pistas.",
+    "verification":"Para publicar como dato factual, intentar corroborar con A; si no existe, contrastar al menos dos fuentes independientes y marcar la confianza.",
+    "dynamic":"Horarios, teléfonos, redes, precios, disponibilidad y estado comercial deben considerarse datos dinámicos y revisarse antes de una nueva edición.",
+    "maps":"Google Maps, OpenStreetMap y cartografía oficial pueden diferir. No mezclar geometrías sin registrar qué fuente las aporta.",
+    "commercial":"No afirmar 'habilitado', 'oficial', 'abierto', 'vigente' o 'disponible' solamente por aparecer en un mapa o directorio."
+  }
+}
