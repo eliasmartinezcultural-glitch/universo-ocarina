@@ -1,0 +1,74 @@
+{
+  "title": "Base territorial y factual · San Patricio del Chañar",
+  "version": "2026-09-09",
+  "purpose": "Fuente interna para fabricar mapas, guías, fichas, rutas y productos digitales de Ocarina sin inventar datos.",
+  "confidence": "evidence-first",
+  "geography": {
+    "province": "Neuquén",
+    "department": "Añelo",
+    "region": "Vaca Muerta / corredor del Valle",
+    "access_routes": ["RP 7", "RP 8"],
+    "official_historical_surface_ha": 9613,
+    "surface_note": "Dato de Información Municipal Básica provincial 2006-2007; no debe tratarse como superficie catastral vigente.",
+    "latitude_context": "aprox. 39° S"
+  },
+  "population": {
+    "censo_2022": 10888,
+    "source_note": "COPADE/Economía Neuquén publica 10.888 habitantes; una ficha regional de COPADE publicada posteriormente informa 10.891. Para productos se debe citar la fuente concreta y no mezclar ambas cifras.",
+    "growth_note": "La localidad presenta crecimiento poblacional fuerte en las últimas décadas."
+  },
+  "identity_and_history": [
+    {"fact":"La Carta Orgánica reconoce como fecha de fundación el 21 de mayo de 1973.","status":"verified","source":"Carta Orgánica / Boletín Oficial de Neuquén"},
+    {"fact":"La denominación San Patricio se vincula con Campo Filone/Campofilone, Italia, de donde procedían colonos asociados a la historia local.","status":"verified_with_source","source":"Información Municipal Básica provincial y sitio municipal"},
+    {"fact":"El nombre Chañar se relaciona con el árbol conocido como chical/chañar.","status":"verified_with_source","source":"Información Municipal Básica provincial y sitio municipal"},
+    {"fact":"La documentación municipal refiere antecedentes de un posible mangrullo/posta y al Fortín Chañar, además de la rastrillada de Paso de Indios.","status":"historical_claim_requires_context","source":"Sitio oficial municipal · Nuestra Identidad"},
+    {"fact":"La colonia Tratayén aparece en documentación vinculada a una mensura de 1913 y el sitio municipal señala que habría desaparecido tras una gran crecida del río Neuquén.","status":"historical_claim_requires_context","source":"Sitio oficial municipal · Nuestra Identidad"},
+    {"fact":"El proceso moderno de transformación productiva se inició con la sistematización de tierras y riego a fines de la década de 1960; la primera bocatoma se menciona para 1971.","status":"verified_with_source","source":"Sitio oficial municipal · Nuestra Identidad"}
+  ],
+  "landscape": {
+    "river": "Río Neuquén",
+    "landforms": ["valle irrigado", "bardas", "estepa", "chacras", "viñedos", "álamos"],
+    "activities_officially_promoted": ["avistaje de aves", "pesca deportiva", "kayak", "agroturismo", "enoturismo"]
+  },
+  "public_attractions": [
+    {"name":"Balneario Municipal","status":"official_municipal","notes":"Predio sobre un brazo del Río Neuquén; 8 piletones, toboganes, canchas, playón, sendas aeróbicas y camping con servicios."},
+    {"name":"Plaza de las Infancias","status":"official_municipal","notes":"Espacio urbano restaurado en 2022; integra juegos y pista de skate."},
+    {"name":"Mirador La Virgen","status":"official_municipal","notes":"Mirador sobre las bardas, a unos 2 km de la intersección RP7/RP8 por Calle 11 Norte según el municipio."},
+    {"name":"Parroquia San Patricio / María Auxiliadora","status":"official_municipal","notes":"Templo construido por la comunidad y bendecido en 1983; parroquia erigida en 1996."},
+    {"name":"Puesto Chañar / CFP Agropecuario Nº2","status":"official_municipal","notes":"Institución vinculada a formación y producción agropecuaria."}
+  ],
+  "tourism_entities": [
+    {"name":"Bodega del Fin del Mundo","category":"bodega","status":"official_provincial","location":"Chacra 77 / RP8 km 9","tourism":"visitas y experiencia en bodega según oferta vigente","source":"Turismo Neuquén"},
+    {"name":"Bodega Familia Schroeder","category":"bodega","status":"official_provincial","location":"Lote 109 Parte Chacra B7 / Picada 7","tourism":"visitas, viñedos y Saurus Resto según oferta vigente","source":"Turismo Neuquén"},
+    {"name":"Bodega Malma","category":"bodega","status":"official_provincial","location":"RP7 / Calle 15","tourism":"visitas, restaurante y experiencias; verificar reserva/horarios antes de publicar","source":"Turismo Neuquén"},
+    {"name":"Bodega Secreto Patagónico","category":"bodega","status":"official_provincial","location":"RP7 / Picada 4 y media","tourism":"visitas y degustaciones con reserva previa según Turismo Neuquén","source":"Turismo Neuquén"},
+    {"name":"Bodega Patritti","category":"bodega","status":"official_municipal_and_provincial_context","location":"San Patricio del Chañar","tourism":"verificar oferta vigente antes de publicar","source":"Municipio / Turismo Neuquén"},
+    {"name":"Bodegas Aicardi","category":"bodega","status":"structured_map_observed","location":"Picada 5 Norte","tourism":"verificar habilitación, horarios y experiencia turística antes de publicar","source":"Directorio estructurado de mapas; requiere validación primaria"},
+    {"name":"Bodega Mabellini","category":"bodega","status":"official_provincial_recent","location":"San Patricio del Chañar","tourism":"participó en Vendimia Neuquina 2026 con jornada de cosecha familiar; verificar oferta permanente","source":"Turismo Neuquén 2026"}
+  ],
+  "lodging_official_municipal": [
+    {"name":"Hotel Don Pedro","location":"Complejo Chocón 690","status":"municipal_listed"},
+    {"name":"Complejo Uno Chañar","location":"Chos Malal y Av. Malvinas Argentinas","status":"municipal_listed"},
+    {"name":"Hostería Chañar / El Chañar","location":"Araucaria 565, Barrio Jardín","status":"municipal_and_provincial_listed"},
+    {"name":"Hospedaje Ruca-Laf","location":"Araucaria 665","status":"municipal_listed"}
+  ],
+  "agrotourism": [
+    {"name":"Establecimiento San Juan","location":"Picada 8","status":"municipal_listed","notes":"Invernaderos y producción de hortalizas; sede de feria rural en 2023 según municipio."},
+    {"name":"Establecimiento Lara","location":"cercanías RP7/RP8 y Río Neuquén","status":"municipal_listed","notes":"Pesca deportiva, kayak, producción artesanal de quesos, animales y laguna según municipio."},
+    {"name":"Cervecería Artesanal Haw","location":"Manzana F4 / calle Moquehue","status":"municipal_listed","notes":"Proyecto familiar iniciado en 2018; verificar horarios y continuidad antes de publicar."}
+  ],
+  "services": {
+    "health": ["Hospital Dra. Alicia Cruz"],
+    "education": ["Escuela Primaria 273", "Escuela Primaria 364", "EPET 26", "CFP Agropecuario Nº2 / Puesto Chañar", "Campus Educativo"],
+    "culture": ["Biblioteca Popular San Patricio del Chañar"],
+    "public_entities": ["Municipalidad", "Registro Civil", "Seguridad Ciudadana"]
+  },
+  "mapping_rules": [
+    "No inventar calles, picadas, caminos, edificios, coordenadas, límites ni prestadores.",
+    "Para cartografía oficial usar fuentes provinciales/catastrales/IGN; para mapas editoriales indicar claramente que son interpretaciones.",
+    "No inferir que un negocio aparece en un directorio estructurado significa que está habilitado turísticamente.",
+    "Horarios, teléfonos, reservas y servicios deben llevar fecha de verificación.",
+    "Separar localidad urbana, zona de chacras, bardas, ribera y accesos rurales como capas distintas.",
+    "Toda afirmación histórica discutible debe llevar fuente y contexto, no presentarse como hecho absoluto."
+  ]
+}
