@@ -1,0 +1,62 @@
+{
+  "design": {
+    "theme": "terrunio-rural-pastel",
+    "rule": "Toda interfaz y pieza de fábrica usa una paleta pastel, cálida, rural y editorial.",
+    "palette": {
+      "crema": "#F4EBDD",
+      "arena": "#E7D6BE",
+      "trigo": "#DCC8A6",
+      "salvia": "#B8C8B0",
+      "oliva-suave": "#A9B59A",
+      "celeste-rio": "#B7D1D0",
+      "cielo": "#C9D9E4",
+      "rosa-tierra": "#D9B9B2",
+      "terracota-pastel": "#CFA38E",
+      "lavanda-tierra": "#C8BDD0",
+      "carbón-suave": "#45433E",
+      "blanco": "#FFFDF8"
+    },
+    "visual_language": [
+      "chacras",
+      "álamos",
+      "canales de riego",
+      "río",
+      "bardas",
+      "caminos rurales",
+      "herramientas y objetos de campo",
+      "texturas de papel, tierra y madera",
+      "cartelería rural reinterpretada",
+      "composición editorial artesanal"
+    ]
+  },
+  "exports": {
+    "master": {"format": "SVG", "purpose": "archivo editable/vectorial y máxima calidad"},
+    "whatsapp": {"format": "JPG", "width": 1080, "height": 1080, "quality": 0.84, "purpose": "envío rápido y visualización móvil"},
+    "instagram-square": {"format": "JPG", "width": 1080, "height": 1080, "quality": 0.86, "purpose": "publicación cuadrada"},
+    "instagram-portrait": {"format": "JPG", "width": 1080, "height": 1350, "quality": 0.86, "purpose": "publicación vertical"},
+    "story-reel": {"format": "JPG", "width": 1080, "height": 1920, "quality": 0.84, "purpose": "historias y portada vertical"},
+    "facebook": {"format": "JPG", "width": 1200, "height": 630, "quality": 0.86, "purpose": "publicación horizontal"},
+    "presentation": {"format": "JPG", "width": 1600, "height": 900, "quality": 0.88, "purpose": "WhatsApp, presentaciones y usos generales"}
+  },
+  "pricing_reference": {
+    "currency": "ARS",
+    "visibility": "internal_reference",
+    "warning": "Valores orientativos de trabajo, no tarifa oficial. Revisar mensualmente por inflación, complejidad, urgencia y uso.",
+    "postal": {"from": 8000, "to": 15000},
+    "lamina": {"from": 15000, "to": 30000},
+    "poster": {"from": 20000, "to": 40000},
+    "pixel": {"from": 15000, "to": 35000},
+    "guide": {"from": 25000, "to": 60000},
+    "map": {"from": 30000, "to": 80000},
+    "pack": {"from": 40000, "to": 100000},
+    "customization_surcharge_percent": {"from": 50, "to": 100},
+    "urgent_surcharge_percent": {"from": 25, "to": 50}
+  },
+  "delivery": {
+    "rule": "Siempre generar master + al menos una versión social optimizada.",
+    "filename": "SKU_nombre_formato.ext",
+    "recommended_order": ["MASTER", "WHATSAPP", "INSTAGRAM", "STORY", "FACEBOOK"],
+    "quality_note": "El archivo maestro no se comprime ni se reemplaza por la versión social. Las versiones sociales son copias de entrega.",
+    "client_message": "Producto listo · archivo optimizado para redes y WhatsApp."
+  }
+}
