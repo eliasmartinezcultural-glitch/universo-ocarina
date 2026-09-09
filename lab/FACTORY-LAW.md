@@ -1,10 +1,22 @@
 # LEY MUNDIAL DEL REPOSITORIO · OCARINA LAB
 
+## 0. JURISDICCIÓN INTERNA — LEY ABSOLUTA
+
+**OCARINA LAB ES DE USO EXCLUSIVO DEL EQUIPO OCARINA.**
+
+La fábrica, sus herramientas, paneles, generadores, catálogos internos, procesos, investigación, curaduría, inventario, archivos de trabajo y operaciones **NO SON PARTE DE LA EXPERIENCIA DEL CLIENTE**.
+
+El cliente puede recibir un producto terminado cuando Ocarina decide ofrecerlo, pero **no entra a la fábrica, no fabrica dentro de ella, no administra el inventario, no ve procesos internos y no necesita conocer su estructura**.
+
+La interfaz pública de productos, si existe, es un escaparate comercial separado. **No es la fábrica.**
+
+El repositorio público de GitHub Pages tampoco debe confundirse con una bóveda privada: cualquier archivo técnicamente publicado allí puede ser accesible. Masters privados, fotografías originales sensibles y datos de clientes deben permanecer fuera del espacio público.
+
 ## 1. La fábrica existe para una sola cosa
 
 **RECIBO PEDIDO → FABRICO → DESCARGO → ENVÍO → FIN.**
 
-Ocarina Lab no es un museo de herramientas ni un proyecto de software por sí mismo. Es una **fábrica virtual de producción rápida** para convertir un pedido en una pieza terminada con la menor cantidad posible de pasos.
+Ocarina Lab no es un museo de herramientas ni un proyecto de software por sí mismo. Es una **fábrica virtual de producción rápida para el equipo Ocarina**.
 
 ## 2. Principio rector
 
@@ -26,23 +38,63 @@ La investigación, curaduría y preparación existen para que este circuito sea 
 
 **Buscar → descargar → enviar.**
 
-Objetivo: segundos.
-
 ### MODO A MEDIDA
 
 **Elegir plantilla → cambiar variables → preview → fabricar → descargar → enviar.**
 
 Objetivo: minutos, no horas.
 
-Nunca empezar desde cero si una plantilla puede resolver el pedido.
-
 ## 5. Personalización paramétrica
 
-Cuando sea posible, una pieza se modifica mediante variables simples: título, subtítulo, nombre, fecha, ubicación, fotografía, texto, colores permitidos, orientación, tamaño, serie, nivel de detalle y variante artística.
+Una pieza puede admitir, según su naturaleza:
 
-La plantilla hace el trabajo estructural. El creador decide el contenido.
+- nombre de persona o familia;
+- saludo o dedicatoria;
+- fecha;
+- lugar;
+- frase local;
+- subtítulo;
+- fotografía propia/autorizada;
+- variante de composición;
+- orientación y tamaño;
+- serie o número de edición;
+- nivel de detalle;
+- elementos territoriales verificables.
 
-## 6. Regla 80/20
+La personalización **no autoriza a alterar falsamente el territorio**. Se cambia la pieza; no se inventa San Patricio del Chañar.
+
+## 6. Nueva línea: RECUERDITO DE SAN PATRICIO DEL CHAÑAR
+
+Algunas piezas podrán incorporar, como recurso editorial opcional, la frase:
+
+**“Un recuerdito de San Patricio del Chañar”**
+
+También podrán existir derivados como:
+
+- **Recuerdito de San Patricio del Chañar** — postal;
+- **Recuerdito de mi Chañar** — lámina;
+- **Un pedacito del Chañar** — pieza de regalo;
+- **Mi Chañar** — pieza personalizable;
+- series de lugares, paisajes, patrimonio, producción rural y vida local.
+
+Estas denominaciones son recursos creativos de Ocarina y no deben convertirse en afirmaciones históricas si no están verificadas.
+
+## 7. LEY DE REPRESENTACIÓN FIEL DEL CHAÑAR
+
+Cuando una obra pretenda representar un lugar real de San Patricio del Chañar, **la prioridad visual es la fidelidad territorial**.
+
+Eso significa:
+
+1. calles, edificios, plazas, accesos, río, chacras, caminos y lugares reconocibles se representan a partir de referencias reales verificadas;
+2. fotografías propias/autorizadas, fuentes oficiales y referencias territoriales verificadas son la base de las representaciones fieles;
+3. no inventar edificios, calles, monumentos, accidentes geográficos ni relaciones espaciales y presentarlos como reales;
+4. si una pieza modifica, mezcla o estiliza la realidad, debe identificarse como **interpretación artística**;
+5. los mapas que no sean cartografía oficial deben decirlo claramente;
+6. para una representación fiel, **la referencia real manda sobre la estética**.
+
+**Regla: primero San Patricio del Chañar real; después el estilo Ocarina.**
+
+## 8. Regla 80/20
 
 **80 % = estructura automática/reutilizable.**
 
@@ -50,19 +102,17 @@ La plantilla hace el trabajo estructural. El creador decide el contenido.
 
 Automatizar lo repetitivo; conservar humana la mirada.
 
-## 7. Identidad visual obligatoria
+## 9. Identidad visual obligatoria
 
-La fábrica debe sentirse como un **terrunio rural digital**: chacras, álamos, canales, río, bardas, caminos rurales, madera, tierra, papel, cielo y objetos cotidianos del campo reinterpretados artísticamente.
+La fábrica debe sentirse como un **terrunio rural digital**, pero la estética nunca debe deformar la identidad real del territorio cuando el producto sea de representación fiel.
 
-**Toda la interfaz y toda nueva plantilla deben trabajar con colores pastel.**
+Toda interfaz y nueva plantilla trabaja con colores pastel: crema, arena, trigo, salvia, oliva suave, celeste río, cielo, rosa tierra, terracota pastel, lavanda tierra, carbón suave y blanco.
 
-Paleta base: crema, arena, trigo, salvia, oliva suave, celeste río, cielo, rosa tierra, terracota pastel, lavanda tierra, carbón suave y blanco.
+No usar negro puro ni fluorescentes como lenguaje habitual.
 
-No usar negro puro ni colores fluorescentes como lenguaje habitual de la fábrica.
+## 10. Sistema de salida
 
-## 8. Sistema de salida
-
-Toda pieza gráfica debe poder conservar un **MASTER** de máxima calidad y generar copias optimizadas para comunicación.
+Toda pieza gráfica debe conservar un MASTER de máxima calidad y generar copias optimizadas para comunicación.
 
 Salidas estándar:
 
@@ -73,71 +123,65 @@ Salidas estándar:
 - Facebook: JPG 1200×630;
 - general/presentación: JPG 1600×900.
 
-Las copias se comprimen para velocidad y compatibilidad; el master nunca se reemplaza.
+Las salidas para cliente son **PDF y JPG**. Las fuentes internas no forman parte de la entrega.
 
-## 9. Regla de descarga fácil
+## 11. Regla de descarga fácil
 
-El creador debe encontrar botones de descarga con lenguaje humano:
+El creador debe encontrar botones humanos:
 
 **MASTER · WHATSAPP · INSTAGRAM · STORY · FACEBOOK**
 
-No obligar a conocer formatos técnicos para entregar un producto.
+Nombres: `SKU_nombre_formato.ext`.
 
-Los nombres deben seguir:
+## 12. Regla comercial
 
-`SKU_nombre_formato.ext`
+La fábrica muestra referencia interna de precio por familia. El precio final depende de valor creativo, complejidad, personalización, investigación, uso y urgencia.
 
-## 10. Regla comercial
+## 13. Reutilización
 
-La fábrica debe mostrar una **referencia interna de precio** por familia, separada del costo técnico de fabricación.
+Cada trabajo terminado debe preguntarse: **¿puede transformarse en otro producto?**
 
-El precio final depende de valor creativo, complejidad, personalización, investigación, uso y urgencia.
+Una representación fiel puede convertirse, por ejemplo, en postal, lámina, póster, pack, guía visual o pieza educativa, siempre conservando qué parte es factual y qué parte es artística.
 
-## 11. Reutilización
+## 14. Calidad factual
 
-Cada trabajo terminado debe preguntarse:
+Rapidez jamás significa inventar información.
 
-> ¿Puede transformarse en otro producto?
+**Rápido + bonito + útil + fiel + verificable.**
 
-Una guía puede alimentar postal, lámina, póster, pack, ficha, educativo o mapa. Una investigación puede alimentar múltiples productos.
+## 15. Archivos y privacidad
 
-## 12. Calidad factual
+Separar investigación, plantillas, masters, previews, productos publicables y documentación técnica.
 
-Rapidez jamás significa inventar información. Los datos territoriales deben conservar procedencia y estado de verificación. Una pieza artística puede interpretar; una pieza factual debe demostrar.
+**Nunca guardar datos personales de compradores en el repositorio público.**
 
-**Rápido + bonito + útil + verificable.**
-
-## 13. Archivos
-
-Separar datos de investigación, plantillas, masters, previews, productos publicables y documentación técnica. Nunca guardar datos personales de compradores en el repositorio público.
-
-## 14. Tecnología
+## 16. Tecnología
 
 Ocarina Lab debe funcionar sin instalación, ser rápido, tolerar conexiones normales y usar estándares simples.
 
-La interfaz puede ser sofisticada por dentro y sencilla por fuera.
-
-## 15. Prueba de fuego
+## 17. Prueba de fuego
 
 Antes de considerar terminada una herramienta:
 
-- ¿Entiendo qué hacer inmediatamente?
-- ¿Puedo cambiar lo necesario sin tocar código?
+- ¿Es útil para el equipo Ocarina?
+- ¿El cliente puede permanecer completamente fuera de la fábrica?
+- ¿Puedo fabricar en minutos?
+- ¿Puedo personalizar sin tocar código?
 - ¿Veo el resultado?
-- ¿Puedo fabricar?
-- ¿Puedo descargar el master?
-- ¿Puedo descargar una versión para el canal que necesito?
-- ¿Sé dónde encontrar el archivo?
-- ¿La plantilla puede reutilizarse?
-- ¿La pieza mantiene identidad artística?
-- ¿Los datos son honestos y trazables?
+- ¿Puedo descargar PDF/JPG?
+- ¿Puedo reutilizar la obra?
+- ¿La representación de un lugar real es fiel a referencias verificadas?
+- ¿Está diferenciada una interpretación artística de un dato factual?
+- ¿La pieza conserva identidad Ocarina sin deformar el territorio?
 
 Si no, sigue en desarrollo.
 
-## 16. Mandamiento final
+## 18. Mandamiento final
 
 > **OCARINA CREA UNA VEZ. OCARINA REUTILIZA MUCHAS VECES.**
 >
-> **EL CLIENTE PIDE. EL CREADOR FABRICA. LA MÁQUINA ACELERA. EL ARTE DIFERENCIA.**
+> **LA FÁBRICA ES DEL EQUIPO OCARINA. EL CLIENTE RECIBE EL RESULTADO.**
+>
+> **PRIMERO EL CHAÑAR REAL. DESPUÉS EL ESTILO.**
 >
 > **MASTER + SALIDA SOCIAL → DESCARGAR → ENVIAR → FIN.**
