@@ -1,4 +1,4 @@
-/* Ocarina Factory Registry 2.0 — fidelity + delivery gates
+/* Ocarina Factory Registry 2.1 — fidelity + delivery gates
    Browser-only integration layer. No buyer data is stored here. */
 (function(global){
   const STATUS={idea:'IDEA',lab:'LAB',qa:'QA',available:'AVAILABLE',archived:'ARCHIVED',soon:'SOON'};
@@ -16,20 +16,28 @@
     const j=await r.json();
     return {meta:j,products:(j.products||[]).map(normalize)};
   }
-  function skuAudit(products){const map={};products.forEach(p=>{if(p.sku)map[p.sku]=(map[p.sku]||0)+1});return Object.keys(map).filter(k=>map[k]>1)}
+  function skuAudit(products){const map={};(products||[]).forEach(p=>{if(p.sku)map[p.sku]=(map[p.sku]||0)+1});return Object.keys(map).filter(k=>map[k]>1)}
   function hasVerifiedReference(p){
-    return p && p.sourceRequired===true && (
-      p.referenceStatus==='verified' ||
-      p.referenceVerified===true ||
-      (Array.isArray(p.visualReferenceIds)&&p.visualReferenceIds.length>0)
-    );
+    if(!p||p.sourceRequired!==true)return true;
+    return p.referenceStatus==='verified' && Array.isArray(p.visualReferenceIds) && p.visualReferenceIds.length>0;
+  }
+  function referenceAudit(p){
+    const issues=[];
+    if(p.sourceRequired===true){
+      if(!REPRESENTATION_MODES.includes(String(p.representationMode||'')))issues.push('Producto con fuente obligatoria sin modo de representación fiel');
+      if(p.referenceStatus!=='verified')issues.push('Referencia real no verificada');
+      if(!Array.isArray(p.visualReferenceIds)||p.visualReferenceIds.length===0)issues.push('Faltan IDs de referencias visuales verificadas');
+      if(!p.referenceRequirement)issues.push('Falta requisito de referencia');
+      if(p.category==='mapa'&&p.referenceType!=='cartographic_verified')issues.push('Mapa requiere referencia cartográfica verificada');
+    }
+    return issues;
   }
   function personalizationAudit(p){
     const issues=[];
     if(p.personalizable===true){
       const opts=Array.isArray(p.personalizationOptions)?p.personalizationOptions:[];
+      if(!opts.length)issues.push('Producto personalizable sin campos definidos');
       opts.forEach(x=>{if(!PERSONALIZATION_FIELDS.includes(x))issues.push('Campo de personalización no permitido: '+x)});
-      if(p.personalization&&p.personalization.enabled===false)issues.push('Personalizable marcado pero motor deshabilitado');
     }
     return issues;
   }
@@ -40,22 +48,19 @@
     if(p.status==='available'&&!fs.length)issues.push('Disponible sin master');
     if((p.customerFormats||CUSTOMER_FORMATS).some(x=>!CUSTOMER_FORMATS.includes(String(x).toUpperCase())))issues.push('Formato de cliente no permitido');
     if(p.representationMode&&!REPRESENTATION_MODES.includes(p.representationMode))issues.push('Modo de representación no permitido');
-    if(p.sourceRequired===true&&!hasVerifiedReference(p))issues.push('Falta referencia visual/territorial verificada');
-    if(p.category==='mapa'&&p.sourceRequired===true&&p.referenceStatus!=='verified'&&!p.referenceVerified)issues.push('Mapa bloqueado: cartografía/referencia debe estar verificada');
     if(p.category==='mapa'&&!/(artíst|cartograf)/i.test(p.description||''))issues.push('Mapa sin alcance editorial claro');
-    if(filesOf(p).some(f=>INTERNAL_EXTENSIONS.includes((f.split('.').pop()||'').toLowerCase())))issues.push('Fuente interna SVG: no entregar al cliente');
-    if(p.customerAccess&&p.customerAccess!=='FINISHED_PRODUCT_ONLY')issues.push('Acceso de cliente inválido');
+    if(p.customerAccess&&p.customerAccess!==CUSTOMER_ACCESS)issues.push('Acceso de cliente inválido');
     if(p.factoryAudience&&p.factoryAudience!==INTERNAL_AUDIENCE)issues.push('Audiencia de fábrica inválida');
-    issues.push(...personalizationAudit(p));
+    issues.push(...referenceAudit(p),...personalizationAudit(p));
+    if(fs.some(f=>INTERNAL_EXTENSIONS.includes((f.split('.').pop()||'').toLowerCase())))issues.push('Fuente interna SVG: no entregar al cliente');
     return issues;
   }
-  function audit(products){const duplicates=skuAudit(products),rows=products.map(p=>({sku:p.sku,name:p.name,status:p.status,issues:productAudit(p)}));return {duplicates,rows,errors:rows.filter(r=>r.issues.length)}}
-  function find(products,sku){return products.find(p=>p.sku===sku)||null}
+  function audit(products){const duplicates=skuAudit(products||[]),rows=(products||[]).map(p=>({sku:p.sku,name:p.name,status:p.status,issues:productAudit(p)}));return {duplicates,rows,errors:rows.filter(r=>r.issues.length)}}
+  function find(products,sku){return (products||[]).find(p=>p.sku===sku)||null}
   function deliveryAllowed(p){
     if(!p||p.status!=='available'||!filesOf(p).length)return false;
-    return productAudit(p).filter(x=>x==='Fuente interna SVG: no entregar al cliente').length===0 &&
-      productAudit(p).filter(x=>x!=='Fuente interna SVG: no entregar al cliente').length===0;
+    return referenceAudit(p).length===0 && personalizationAudit(p).length===0 && !((p.customerFormats||CUSTOMER_FORMATS).some(x=>!CUSTOMER_FORMATS.includes(String(x).toUpperCase())));
   }
-  function lifecycle(p){if(!p)return 'UNKNOWN';if(p.status==='available')return 'AVAILABLE';if(p.status==='lab')return 'LAB';if(p.status==='soon')return 'SOON';return String(p.status||'UNKNOWN').toUpperCase()}
-  global.OCARINA_REGISTRY={STATUS,CUSTOMER_FORMATS,REPRESENTATION_MODES,PERSONALIZATION_FIELDS,INTERNAL_AUDIENCE,CUSTOMER_ACCESS,loadCatalog,filesOf,skuAudit,hasVerifiedReference,personalizationAudit,productAudit,audit,find,deliveryAllowed,lifecycle};
+  function lifecycle(p){if(!p)return 'UNKNOWN';if(p.status==='available')return 'AVAILABLE';if(p.status==='lab')return 'LAB';if(p.status==='qa')return 'QA';if(p.status==='soon')return 'SOON';return String(p.status||'UNKNOWN').toUpperCase()}
+  global.OCARINA_REGISTRY={STATUS,CUSTOMER_FORMATS,INTERNAL_EXTENSIONS,REPRESENTATION_MODES,PERSONALIZATION_FIELDS,INTERNAL_AUDIENCE,CUSTOMER_ACCESS,loadCatalog,filesOf,skuAudit,hasVerifiedReference,referenceAudit,personalizationAudit,productAudit,audit,find,deliveryAllowed,lifecycle};
 })(window);
