@@ -1,0 +1,7 @@
+{
+  "version": "1.0",
+  "purpose": "Registro interno de referencias reales para productos fieles de Ocarina Lab.",
+  "visibility": "INTERNAL_ONLY",
+  "statuses": ["candidate", "verified", "restricted", "archived"],
+  "items": []
+}
