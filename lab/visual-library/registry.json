@@ -1,0 +1,7 @@
+{
+  "version": "1.0",
+  "library": "Ocarina Visual Library",
+  "rule": "Solo material propio o debidamente autorizado",
+  "statuses": ["candidate", "approved", "restricted", "archived"],
+  "assets": []
+}
