@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11110f">
+  <meta name="description" content="Fábrica Chañar: crea postales, fichas, guías y mapas digitales de San Patricio del Chañar.">
+  <title>Fábrica Chañar · Ocarina Producciones</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div><span class="eyebrow">OCARINA PRODUCCIONES</span><h1>FÁBRICA CHAÑAR</h1><p>Productos digitales de San Patricio del Chañar</p></div>
+  <div class="status">LOCAL · GRATUITA · SIN INSTALAR</div>
+</header>
+<main class="shell">
+  <section class="hero"><div><span class="eyebrow">LABORATORIO TERRITORIAL</span><h2>Idea → producto → descarga</h2><p>Creá una pieza local en minutos. Los datos quedan en este navegador.</p></div><button class="ghost" id="clearBtn">Limpiar</button></section>
+  <section class="workspace">
+    <aside class="panel controls">
+      <label>¿Qué querés fabricar?<select id="type"><option value="postal">Postal</option><option value="ficha">Ficha local</option><option value="guia">Guía breve</option><option value="mapa">Mapa esquemático</option></select></label>
+      <label>Plantilla<select id="template"></select></label>
+      <label>Título<input id="title" maxlength="80" placeholder="Ej. San Patricio del Chañar"></label>
+      <label>Lugar<input id="place" maxlength="80" placeholder="Ej. Zona rural"></label>
+      <label>Texto<textarea id="body" maxlength="500" placeholder="Escribí una descripción breve..."></textarea></label>
+      <label>Fecha / referencia<input id="date" maxlength="80" placeholder="Ej. 2026"></label>
+      <label>Fuente<input id="source" maxlength="160" placeholder="Fuente o archivo consultado"></label>
+      <label>Crédito<input id="credit" maxlength="120" value="Ocarina Producciones"></label>
+      <label class="file">Imagen<input id="image" type="file" accept="image/*"></label>
+      <div class="actions"><button id="generate" class="primary">GENERAR</button><button id="save" class="secondary">GUARDAR</button></div>
+      <div class="exports"><button id="png">PNG</button><button id="jpg">JPG</button><button id="pdf">PDF</button><button id="print">IMPRIMIR</button></div>
+      <small>Los datos son locales. No se envían a un servidor.</small>
+    </aside>
+    <section class="stage"><div class="preview-wrap"><article id="preview" class="product postal landscape"><div class="media"><div class="placeholder">CHAÑAR</div><img id="previewImage" alt="" hidden></div><div class="overlay"><span id="previewType">POSTAL</span><h3 id="previewTitle">San Patricio del Chañar</h3><p id="previewBody">Tu producto local aparece acá.</p><div class="meta"><span id="previewPlace">Neuquén · Patagonia</span><span id="previewDate"></span></div><footer><span id="previewCredit">Ocarina Producciones</span><span id="previewSource"></span></footer></div></article></div><div class="hint">Vista previa · pensada para celular, PC y WhatsApp</div></section>
+  </section>
+  <section class="library panel"><div class="library-head"><div><span class="eyebrow">BIBLIOTECA LOCAL</span><h2>Productos guardados</h2></div><button id="exportLibrary">Exportar datos</button></div><div id="saved" class="saved-grid"></div></section>
+</main>
+<footer class="footer">Fábrica Chañar · herramienta de Ocarina Producciones · San Patricio del Chañar, Neuquén</footer>
+<script src="app.js"></script>
+</body>
+</html>
